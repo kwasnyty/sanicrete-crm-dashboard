@@ -1,0 +1,1426 @@
+{
+  "filtered_prospects": {
+    "CTI Foods": {
+      "category": "Food Processing",
+      "total_emails": 264,
+      "business_score": 164,
+      "conversation_score": 10,
+      "overall_score": 538,
+      "first_contact": "2018-03-15T10:30:00+00:00",
+      "latest_contact": "2026-02-11T14:22:00+00:00",
+      "relevant_emails": [
+        {
+          "date": "2025-08-15T09:00:00+00:00",
+          "subject": "CTI Foods Flooring Work",
+          "type": "business",
+          "keywords": [
+            "flooring",
+            "floor"
+          ]
+        },
+        {
+          "date": "2025-09-02T14:30:00+00:00",
+          "subject": "Signed Agreement For Flooring Install",
+          "type": "business",
+          "keywords": [
+            "flooring",
+            "floor"
+          ]
+        }
+      ],
+      "contacts": {
+        "Project Manager": {
+          "email": "projects@ctifoods.com",
+          "email_count": 12,
+          "last_contact": "2026-02-11T14:22:00+00:00"
+        }
+      },
+      "relationship_strength": "warm",
+      "current_lead_score": 85,
+      "industry": "food_processing",
+      "emails_by_year": {
+        "2024": 45,
+        "2025": 89,
+        "2026": 12
+      },
+      "emails_by_month": {
+        "2026-01": 8,
+        "2026-02": 4
+      }
+    },
+    "Springfield Industries": {
+      "category": "Industrial/Manufacturing",
+      "total_emails": 533,
+      "business_score": 121,
+      "conversation_score": 12,
+      "overall_score": 440,
+      "first_contact": "2019-05-20T08:15:00+00:00",
+      "latest_contact": "2026-02-10T16:45:00+00:00",
+      "relevant_emails": [
+        {
+          "date": "2025-12-15T11:00:00+00:00",
+          "subject": "Quote Request - Manufacturing Floor",
+          "type": "business",
+          "keywords": [
+            "quote"
+          ]
+        },
+        {
+          "date": "2026-01-22T13:30:00+00:00",
+          "subject": "RE: Epoxy Flooring Options",
+          "type": "conversation",
+          "keywords": [
+            "epoxy"
+          ]
+        }
+      ],
+      "contacts": {
+        "Facility Manager": {
+          "email": "facilities@springfield-ind.com",
+          "email_count": 18,
+          "last_contact": "2026-02-10T16:45:00+00:00"
+        }
+      },
+      "relationship_strength": "warm",
+      "current_lead_score": 72,
+      "industry": "manufacturing",
+      "emails_by_year": {
+        "2023": 89,
+        "2024": 156,
+        "2025": 201,
+        "2026": 87
+      },
+      "emails_by_month": {
+        "2025-12": 23,
+        "2026-01": 34,
+        "2026-02": 53
+      }
+    },
+    "Monogram Foods": {
+      "category": "Food Processing",
+      "total_emails": 263,
+      "business_score": 145,
+      "conversation_score": 14,
+      "overall_score": 489,
+      "first_contact": "2020-01-10T12:00:00+00:00",
+      "latest_contact": "2026-02-12T09:15:00+00:00",
+      "relevant_emails": [
+        {
+          "date": "2025-11-30T15:45:00+00:00",
+          "subject": "FLOORING - SaniCrete Flooring Quote",
+          "type": "business",
+          "keywords": [
+            "flooring",
+            "floor",
+            "quote"
+          ]
+        },
+        {
+          "date": "2026-01-15T10:20:00+00:00",
+          "subject": "Memphis Plant Floor Renovation",
+          "type": "business",
+          "keywords": [
+            "floor"
+          ]
+        }
+      ],
+      "contacts": {
+        "Operations Manager": {
+          "email": "ops@monogramfoods.com",
+          "email_count": 25,
+          "last_contact": "2026-02-12T09:15:00+00:00"
+        }
+      },
+      "relationship_strength": "hot",
+      "current_lead_score": 91,
+      "industry": "food_processing",
+      "emails_by_year": {
+        "2023": 67,
+        "2024": 89,
+        "2025": 78,
+        "2026": 29
+      },
+      "emails_by_month": {
+        "2025-11": 12,
+        "2025-12": 8,
+        "2026-01": 15,
+        "2026-02": 14
+      }
+    },
+    "BuildingConnected": {
+      "category": "Construction",
+      "total_emails": 1250,
+      "business_score": 890,
+      "conversation_score": 145,
+      "overall_score": 2800,
+      "first_contact": "2019-03-20T14:30:00+00:00",
+      "latest_contact": "2026-02-13T11:45:00+00:00",
+      "relevant_emails": [
+        {
+          "date": "2026-02-01T08:00:00+00:00",
+          "subject": "New Bid Opportunity: Industrial Flooring Project",
+          "type": "business",
+          "keywords": [
+            "bid",
+            "flooring",
+            "industrial"
+          ]
+        },
+        {
+          "date": "2026-02-13T11:45:00+00:00",
+          "subject": "5 New Construction Bids This Week",
+          "type": "business",
+          "keywords": [
+            "construction",
+            "bid"
+          ]
+        }
+      ],
+      "contacts": {
+        "Bid Platform": {
+          "email": "notifications@buildingconnected.com",
+          "email_count": 1250,
+          "last_contact": "2026-02-13T11:45:00+00:00"
+        }
+      },
+      "relationship_strength": "warm",
+      "current_lead_score": 95,
+      "industry": "construction",
+      "emails_by_year": {
+        "2022": 89,
+        "2023": 234,
+        "2024": 345,
+        "2025": 398,
+        "2026": 184
+      },
+      "emails_by_month": {
+        "2025-12": 45,
+        "2026-01": 89,
+        "2026-02": 95
+      }
+    },
+    "PlanHub": {
+      "category": "Construction",
+      "total_emails": 456,
+      "business_score": 234,
+      "conversation_score": 45,
+      "overall_score": 756,
+      "first_contact": "2021-06-15T16:20:00+00:00",
+      "latest_contact": "2026-02-13T14:30:00+00:00",
+      "relevant_emails": [
+        {
+          "date": "2026-02-08T09:30:00+00:00",
+          "subject": "New Project Alert: Food Processing Plant Flooring",
+          "type": "business",
+          "keywords": [
+            "project",
+            "food processing",
+            "flooring"
+          ]
+        },
+        {
+          "date": "2026-02-13T14:30:00+00:00",
+          "subject": "Michigan Construction Projects - Bids Due Soon",
+          "type": "business",
+          "keywords": [
+            "construction",
+            "bid"
+          ]
+        }
+      ],
+      "contacts": {
+        "Project Notifications": {
+          "email": "alerts@planhub.com",
+          "email_count": 456,
+          "last_contact": "2026-02-13T14:30:00+00:00"
+        }
+      },
+      "relationship_strength": "warm",
+      "current_lead_score": 88,
+      "industry": "construction",
+      "emails_by_year": {
+        "2022": 67,
+        "2023": 123,
+        "2024": 156,
+        "2025": 78,
+        "2026": 32
+      },
+      "emails_by_month": {
+        "2025-12": 12,
+        "2026-01": 15,
+        "2026-02": 17
+      }
+    },
+    "Business Company 01": {
+      "category": "Business Prospect",
+      "total_emails": 15,
+      "business_score": 10,
+      "conversation_score": 2,
+      "overall_score": 50,
+      "first_contact": "2023-01-01T10:00:00+00:00",
+      "latest_contact": "2025-01-01T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "cold",
+      "current_lead_score": 25,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 5,
+        "2024": 8,
+        "2025": 12
+      },
+      "emails_by_month": {
+        "2025-11": 1,
+        "2025-12": 2
+      }
+    },
+    "Business Company 02": {
+      "category": "Service Provider",
+      "total_emails": 18,
+      "business_score": 12,
+      "conversation_score": 3,
+      "overall_score": 58,
+      "first_contact": "2023-02-02T10:00:00+00:00",
+      "latest_contact": "2025-02-02T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "warm",
+      "current_lead_score": 27,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 6,
+        "2024": 9,
+        "2025": 13
+      },
+      "emails_by_month": {
+        "2025-11": 2,
+        "2025-12": 3
+      }
+    },
+    "Business Company 03": {
+      "category": "Business Prospect",
+      "total_emails": 21,
+      "business_score": 14,
+      "conversation_score": 4,
+      "overall_score": 66,
+      "first_contact": "2023-03-03T10:00:00+00:00",
+      "latest_contact": "2025-03-03T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "new",
+      "current_lead_score": 29,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 7,
+        "2024": 10,
+        "2025": 14
+      },
+      "emails_by_month": {
+        "2025-11": 3,
+        "2025-12": 4
+      }
+    },
+    "Business Company 04": {
+      "category": "Service Provider",
+      "total_emails": 24,
+      "business_score": 16,
+      "conversation_score": 5,
+      "overall_score": 74,
+      "first_contact": "2023-04-04T10:00:00+00:00",
+      "latest_contact": "2025-04-04T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "cold",
+      "current_lead_score": 31,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 8,
+        "2024": 11,
+        "2025": 15
+      },
+      "emails_by_month": {
+        "2025-11": 4,
+        "2025-12": 5
+      }
+    },
+    "Business Company 05": {
+      "category": "Business Prospect",
+      "total_emails": 27,
+      "business_score": 18,
+      "conversation_score": 6,
+      "overall_score": 82,
+      "first_contact": "2023-05-05T10:00:00+00:00",
+      "latest_contact": "2025-05-05T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "warm",
+      "current_lead_score": 33,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 9,
+        "2024": 12,
+        "2025": 16
+      },
+      "emails_by_month": {
+        "2025-11": 5,
+        "2025-12": 6
+      }
+    },
+    "Business Company 06": {
+      "category": "Service Provider",
+      "total_emails": 30,
+      "business_score": 20,
+      "conversation_score": 2,
+      "overall_score": 90,
+      "first_contact": "2023-06-06T10:00:00+00:00",
+      "latest_contact": "2025-06-06T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "new",
+      "current_lead_score": 35,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 10,
+        "2024": 13,
+        "2025": 17
+      },
+      "emails_by_month": {
+        "2025-11": 6,
+        "2025-12": 7
+      }
+    },
+    "Business Company 07": {
+      "category": "Business Prospect",
+      "total_emails": 33,
+      "business_score": 22,
+      "conversation_score": 3,
+      "overall_score": 98,
+      "first_contact": "2023-07-07T10:00:00+00:00",
+      "latest_contact": "2025-07-07T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "cold",
+      "current_lead_score": 37,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 11,
+        "2024": 14,
+        "2025": 18
+      },
+      "emails_by_month": {
+        "2025-11": 7,
+        "2025-12": 2
+      }
+    },
+    "Business Company 08": {
+      "category": "Service Provider",
+      "total_emails": 36,
+      "business_score": 24,
+      "conversation_score": 4,
+      "overall_score": 106,
+      "first_contact": "2023-08-08T10:00:00+00:00",
+      "latest_contact": "2025-08-08T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "warm",
+      "current_lead_score": 39,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 12,
+        "2024": 15,
+        "2025": 19
+      },
+      "emails_by_month": {
+        "2025-11": 8,
+        "2025-12": 3
+      }
+    },
+    "Business Company 09": {
+      "category": "Business Prospect",
+      "total_emails": 39,
+      "business_score": 26,
+      "conversation_score": 5,
+      "overall_score": 114,
+      "first_contact": "2023-09-09T10:00:00+00:00",
+      "latest_contact": "2025-09-09T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "new",
+      "current_lead_score": 41,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 13,
+        "2024": 16,
+        "2025": 20
+      },
+      "emails_by_month": {
+        "2025-11": 1,
+        "2025-12": 4
+      }
+    },
+    "Business Company 10": {
+      "category": "Service Provider",
+      "total_emails": 42,
+      "business_score": 28,
+      "conversation_score": 6,
+      "overall_score": 122,
+      "first_contact": "2023-10-10T10:00:00+00:00",
+      "latest_contact": "2025-10-10T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "cold",
+      "current_lead_score": 43,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 14,
+        "2024": 17,
+        "2025": 21
+      },
+      "emails_by_month": {
+        "2025-11": 2,
+        "2025-12": 5
+      }
+    },
+    "Business Company 11": {
+      "category": "Business Prospect",
+      "total_emails": 45,
+      "business_score": 30,
+      "conversation_score": 2,
+      "overall_score": 130,
+      "first_contact": "2023-11-11T10:00:00+00:00",
+      "latest_contact": "2025-11-11T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "warm",
+      "current_lead_score": 45,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 15,
+        "2024": 18,
+        "2025": 22
+      },
+      "emails_by_month": {
+        "2025-11": 3,
+        "2025-12": 6
+      }
+    },
+    "Business Company 12": {
+      "category": "Service Provider",
+      "total_emails": 48,
+      "business_score": 32,
+      "conversation_score": 3,
+      "overall_score": 138,
+      "first_contact": "2023-12-12T10:00:00+00:00",
+      "latest_contact": "2025-12-12T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "new",
+      "current_lead_score": 47,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 16,
+        "2024": 19,
+        "2025": 23
+      },
+      "emails_by_month": {
+        "2025-11": 4,
+        "2025-12": 7
+      }
+    },
+    "Business Company 13": {
+      "category": "Business Prospect",
+      "total_emails": 51,
+      "business_score": 34,
+      "conversation_score": 4,
+      "overall_score": 146,
+      "first_contact": "2023-01-13T10:00:00+00:00",
+      "latest_contact": "2025-01-13T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "cold",
+      "current_lead_score": 49,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 17,
+        "2024": 20,
+        "2025": 24
+      },
+      "emails_by_month": {
+        "2025-11": 5,
+        "2025-12": 2
+      }
+    },
+    "Business Company 14": {
+      "category": "Service Provider",
+      "total_emails": 54,
+      "business_score": 36,
+      "conversation_score": 5,
+      "overall_score": 154,
+      "first_contact": "2023-02-14T10:00:00+00:00",
+      "latest_contact": "2025-02-14T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "warm",
+      "current_lead_score": 51,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 18,
+        "2024": 21,
+        "2025": 25
+      },
+      "emails_by_month": {
+        "2025-11": 6,
+        "2025-12": 3
+      }
+    },
+    "Business Company 15": {
+      "category": "Business Prospect",
+      "total_emails": 57,
+      "business_score": 38,
+      "conversation_score": 6,
+      "overall_score": 162,
+      "first_contact": "2023-03-15T10:00:00+00:00",
+      "latest_contact": "2025-03-15T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "new",
+      "current_lead_score": 53,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 19,
+        "2024": 22,
+        "2025": 26
+      },
+      "emails_by_month": {
+        "2025-11": 7,
+        "2025-12": 4
+      }
+    },
+    "Business Company 16": {
+      "category": "Service Provider",
+      "total_emails": 60,
+      "business_score": 40,
+      "conversation_score": 2,
+      "overall_score": 170,
+      "first_contact": "2023-04-16T10:00:00+00:00",
+      "latest_contact": "2025-04-16T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "cold",
+      "current_lead_score": 55,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 20,
+        "2024": 23,
+        "2025": 27
+      },
+      "emails_by_month": {
+        "2025-11": 8,
+        "2025-12": 5
+      }
+    },
+    "Business Company 17": {
+      "category": "Business Prospect",
+      "total_emails": 63,
+      "business_score": 42,
+      "conversation_score": 3,
+      "overall_score": 178,
+      "first_contact": "2023-05-17T10:00:00+00:00",
+      "latest_contact": "2025-05-17T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "warm",
+      "current_lead_score": 57,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 21,
+        "2024": 24,
+        "2025": 28
+      },
+      "emails_by_month": {
+        "2025-11": 1,
+        "2025-12": 6
+      }
+    },
+    "Business Company 18": {
+      "category": "Service Provider",
+      "total_emails": 66,
+      "business_score": 44,
+      "conversation_score": 4,
+      "overall_score": 186,
+      "first_contact": "2023-06-18T10:00:00+00:00",
+      "latest_contact": "2025-06-18T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "new",
+      "current_lead_score": 59,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 22,
+        "2024": 25,
+        "2025": 29
+      },
+      "emails_by_month": {
+        "2025-11": 2,
+        "2025-12": 7
+      }
+    },
+    "Business Company 19": {
+      "category": "Business Prospect",
+      "total_emails": 69,
+      "business_score": 46,
+      "conversation_score": 5,
+      "overall_score": 194,
+      "first_contact": "2023-07-19T10:00:00+00:00",
+      "latest_contact": "2025-07-19T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "cold",
+      "current_lead_score": 61,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 23,
+        "2024": 26,
+        "2025": 30
+      },
+      "emails_by_month": {
+        "2025-11": 3,
+        "2025-12": 2
+      }
+    },
+    "Business Company 20": {
+      "category": "Service Provider",
+      "total_emails": 72,
+      "business_score": 48,
+      "conversation_score": 6,
+      "overall_score": 202,
+      "first_contact": "2023-08-20T10:00:00+00:00",
+      "latest_contact": "2025-08-20T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "warm",
+      "current_lead_score": 63,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 24,
+        "2024": 27,
+        "2025": 31
+      },
+      "emails_by_month": {
+        "2025-11": 4,
+        "2025-12": 3
+      }
+    },
+    "Business Company 21": {
+      "category": "Business Prospect",
+      "total_emails": 75,
+      "business_score": 50,
+      "conversation_score": 2,
+      "overall_score": 210,
+      "first_contact": "2023-09-21T10:00:00+00:00",
+      "latest_contact": "2025-09-21T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "new",
+      "current_lead_score": 65,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 25,
+        "2024": 28,
+        "2025": 32
+      },
+      "emails_by_month": {
+        "2025-11": 5,
+        "2025-12": 4
+      }
+    },
+    "Business Company 22": {
+      "category": "Service Provider",
+      "total_emails": 78,
+      "business_score": 52,
+      "conversation_score": 3,
+      "overall_score": 218,
+      "first_contact": "2023-10-22T10:00:00+00:00",
+      "latest_contact": "2025-10-22T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "cold",
+      "current_lead_score": 67,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 26,
+        "2024": 29,
+        "2025": 33
+      },
+      "emails_by_month": {
+        "2025-11": 6,
+        "2025-12": 5
+      }
+    },
+    "Business Company 23": {
+      "category": "Business Prospect",
+      "total_emails": 81,
+      "business_score": 54,
+      "conversation_score": 4,
+      "overall_score": 226,
+      "first_contact": "2023-11-23T10:00:00+00:00",
+      "latest_contact": "2025-11-23T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "warm",
+      "current_lead_score": 69,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 27,
+        "2024": 30,
+        "2025": 34
+      },
+      "emails_by_month": {
+        "2025-11": 7,
+        "2025-12": 6
+      }
+    },
+    "Business Company 24": {
+      "category": "Service Provider",
+      "total_emails": 84,
+      "business_score": 56,
+      "conversation_score": 5,
+      "overall_score": 234,
+      "first_contact": "2023-12-24T10:00:00+00:00",
+      "latest_contact": "2025-12-24T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "new",
+      "current_lead_score": 71,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 28,
+        "2024": 31,
+        "2025": 35
+      },
+      "emails_by_month": {
+        "2025-11": 8,
+        "2025-12": 7
+      }
+    },
+    "Business Company 25": {
+      "category": "Business Prospect",
+      "total_emails": 87,
+      "business_score": 58,
+      "conversation_score": 6,
+      "overall_score": 242,
+      "first_contact": "2023-01-25T10:00:00+00:00",
+      "latest_contact": "2025-01-25T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "cold",
+      "current_lead_score": 73,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 29,
+        "2024": 32,
+        "2025": 36
+      },
+      "emails_by_month": {
+        "2025-11": 1,
+        "2025-12": 2
+      }
+    },
+    "Business Company 26": {
+      "category": "Service Provider",
+      "total_emails": 90,
+      "business_score": 60,
+      "conversation_score": 2,
+      "overall_score": 250,
+      "first_contact": "2023-02-26T10:00:00+00:00",
+      "latest_contact": "2025-02-26T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "warm",
+      "current_lead_score": 75,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 30,
+        "2024": 33,
+        "2025": 37
+      },
+      "emails_by_month": {
+        "2025-11": 2,
+        "2025-12": 3
+      }
+    },
+    "Business Company 27": {
+      "category": "Business Prospect",
+      "total_emails": 93,
+      "business_score": 62,
+      "conversation_score": 3,
+      "overall_score": 258,
+      "first_contact": "2023-03-27T10:00:00+00:00",
+      "latest_contact": "2025-03-27T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "new",
+      "current_lead_score": 77,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 31,
+        "2024": 34,
+        "2025": 38
+      },
+      "emails_by_month": {
+        "2025-11": 3,
+        "2025-12": 4
+      }
+    },
+    "Business Company 28": {
+      "category": "Service Provider",
+      "total_emails": 96,
+      "business_score": 64,
+      "conversation_score": 4,
+      "overall_score": 266,
+      "first_contact": "2023-04-28T10:00:00+00:00",
+      "latest_contact": "2025-04-28T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "cold",
+      "current_lead_score": 79,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 32,
+        "2024": 35,
+        "2025": 39
+      },
+      "emails_by_month": {
+        "2025-11": 4,
+        "2025-12": 5
+      }
+    },
+    "Business Company 29": {
+      "category": "Business Prospect",
+      "total_emails": 99,
+      "business_score": 66,
+      "conversation_score": 5,
+      "overall_score": 274,
+      "first_contact": "2023-05-01T10:00:00+00:00",
+      "latest_contact": "2025-05-01T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "warm",
+      "current_lead_score": 81,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 33,
+        "2024": 36,
+        "2025": 40
+      },
+      "emails_by_month": {
+        "2025-11": 5,
+        "2025-12": 6
+      }
+    },
+    "Business Company 30": {
+      "category": "Service Provider",
+      "total_emails": 102,
+      "business_score": 68,
+      "conversation_score": 6,
+      "overall_score": 282,
+      "first_contact": "2023-06-02T10:00:00+00:00",
+      "latest_contact": "2025-06-02T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "new",
+      "current_lead_score": 83,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 34,
+        "2024": 37,
+        "2025": 41
+      },
+      "emails_by_month": {
+        "2025-11": 6,
+        "2025-12": 7
+      }
+    },
+    "Business Company 31": {
+      "category": "Business Prospect",
+      "total_emails": 105,
+      "business_score": 70,
+      "conversation_score": 2,
+      "overall_score": 290,
+      "first_contact": "2023-07-03T10:00:00+00:00",
+      "latest_contact": "2025-07-03T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "cold",
+      "current_lead_score": 85,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 35,
+        "2024": 38,
+        "2025": 42
+      },
+      "emails_by_month": {
+        "2025-11": 7,
+        "2025-12": 2
+      }
+    },
+    "Business Company 32": {
+      "category": "Service Provider",
+      "total_emails": 108,
+      "business_score": 72,
+      "conversation_score": 3,
+      "overall_score": 298,
+      "first_contact": "2023-08-04T10:00:00+00:00",
+      "latest_contact": "2025-08-04T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "warm",
+      "current_lead_score": 87,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 36,
+        "2024": 39,
+        "2025": 43
+      },
+      "emails_by_month": {
+        "2025-11": 8,
+        "2025-12": 3
+      }
+    },
+    "Business Company 33": {
+      "category": "Business Prospect",
+      "total_emails": 111,
+      "business_score": 74,
+      "conversation_score": 4,
+      "overall_score": 306,
+      "first_contact": "2023-09-05T10:00:00+00:00",
+      "latest_contact": "2025-09-05T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "new",
+      "current_lead_score": 89,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 37,
+        "2024": 40,
+        "2025": 44
+      },
+      "emails_by_month": {
+        "2025-11": 1,
+        "2025-12": 4
+      }
+    },
+    "Business Company 34": {
+      "category": "Service Provider",
+      "total_emails": 114,
+      "business_score": 76,
+      "conversation_score": 5,
+      "overall_score": 314,
+      "first_contact": "2023-10-06T10:00:00+00:00",
+      "latest_contact": "2025-10-06T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "cold",
+      "current_lead_score": 91,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 38,
+        "2024": 41,
+        "2025": 45
+      },
+      "emails_by_month": {
+        "2025-11": 2,
+        "2025-12": 5
+      }
+    },
+    "Business Company 35": {
+      "category": "Business Prospect",
+      "total_emails": 117,
+      "business_score": 78,
+      "conversation_score": 6,
+      "overall_score": 322,
+      "first_contact": "2023-11-07T10:00:00+00:00",
+      "latest_contact": "2025-11-07T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "warm",
+      "current_lead_score": 93,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 39,
+        "2024": 42,
+        "2025": 46
+      },
+      "emails_by_month": {
+        "2025-11": 3,
+        "2025-12": 6
+      }
+    },
+    "Business Company 36": {
+      "category": "Service Provider",
+      "total_emails": 120,
+      "business_score": 80,
+      "conversation_score": 2,
+      "overall_score": 330,
+      "first_contact": "2023-12-08T10:00:00+00:00",
+      "latest_contact": "2025-12-08T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "new",
+      "current_lead_score": 95,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 40,
+        "2024": 43,
+        "2025": 47
+      },
+      "emails_by_month": {
+        "2025-11": 4,
+        "2025-12": 7
+      }
+    },
+    "Business Company 37": {
+      "category": "Business Prospect",
+      "total_emails": 123,
+      "business_score": 82,
+      "conversation_score": 3,
+      "overall_score": 338,
+      "first_contact": "2023-01-09T10:00:00+00:00",
+      "latest_contact": "2025-01-09T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "cold",
+      "current_lead_score": 97,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 41,
+        "2024": 44,
+        "2025": 48
+      },
+      "emails_by_month": {
+        "2025-11": 5,
+        "2025-12": 2
+      }
+    },
+    "Business Company 38": {
+      "category": "Service Provider",
+      "total_emails": 126,
+      "business_score": 84,
+      "conversation_score": 4,
+      "overall_score": 346,
+      "first_contact": "2023-02-10T10:00:00+00:00",
+      "latest_contact": "2025-02-10T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "warm",
+      "current_lead_score": 99,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 42,
+        "2024": 45,
+        "2025": 49
+      },
+      "emails_by_month": {
+        "2025-11": 6,
+        "2025-12": 3
+      }
+    },
+    "Business Company 39": {
+      "category": "Business Prospect",
+      "total_emails": 129,
+      "business_score": 86,
+      "conversation_score": 5,
+      "overall_score": 354,
+      "first_contact": "2023-03-11T10:00:00+00:00",
+      "latest_contact": "2025-03-11T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "new",
+      "current_lead_score": 101,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 43,
+        "2024": 46,
+        "2025": 50
+      },
+      "emails_by_month": {
+        "2025-11": 7,
+        "2025-12": 4
+      }
+    },
+    "Business Company 40": {
+      "category": "Service Provider",
+      "total_emails": 132,
+      "business_score": 88,
+      "conversation_score": 6,
+      "overall_score": 362,
+      "first_contact": "2023-04-12T10:00:00+00:00",
+      "latest_contact": "2025-04-12T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "cold",
+      "current_lead_score": 103,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 44,
+        "2024": 47,
+        "2025": 51
+      },
+      "emails_by_month": {
+        "2025-11": 8,
+        "2025-12": 5
+      }
+    },
+    "Business Company 41": {
+      "category": "Business Prospect",
+      "total_emails": 135,
+      "business_score": 90,
+      "conversation_score": 2,
+      "overall_score": 370,
+      "first_contact": "2023-05-13T10:00:00+00:00",
+      "latest_contact": "2025-05-13T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "warm",
+      "current_lead_score": 105,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 45,
+        "2024": 48,
+        "2025": 52
+      },
+      "emails_by_month": {
+        "2025-11": 1,
+        "2025-12": 6
+      }
+    },
+    "Business Company 42": {
+      "category": "Service Provider",
+      "total_emails": 138,
+      "business_score": 92,
+      "conversation_score": 3,
+      "overall_score": 378,
+      "first_contact": "2023-06-14T10:00:00+00:00",
+      "latest_contact": "2025-06-14T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "new",
+      "current_lead_score": 107,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 46,
+        "2024": 49,
+        "2025": 53
+      },
+      "emails_by_month": {
+        "2025-11": 2,
+        "2025-12": 7
+      }
+    },
+    "Business Company 43": {
+      "category": "Business Prospect",
+      "total_emails": 141,
+      "business_score": 94,
+      "conversation_score": 4,
+      "overall_score": 386,
+      "first_contact": "2023-07-15T10:00:00+00:00",
+      "latest_contact": "2025-07-15T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "cold",
+      "current_lead_score": 109,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 47,
+        "2024": 50,
+        "2025": 54
+      },
+      "emails_by_month": {
+        "2025-11": 3,
+        "2025-12": 2
+      }
+    },
+    "Business Company 44": {
+      "category": "Service Provider",
+      "total_emails": 144,
+      "business_score": 96,
+      "conversation_score": 5,
+      "overall_score": 394,
+      "first_contact": "2023-08-16T10:00:00+00:00",
+      "latest_contact": "2025-08-16T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "warm",
+      "current_lead_score": 111,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 48,
+        "2024": 51,
+        "2025": 55
+      },
+      "emails_by_month": {
+        "2025-11": 4,
+        "2025-12": 3
+      }
+    },
+    "Business Company 45": {
+      "category": "Business Prospect",
+      "total_emails": 147,
+      "business_score": 98,
+      "conversation_score": 6,
+      "overall_score": 402,
+      "first_contact": "2023-09-17T10:00:00+00:00",
+      "latest_contact": "2025-09-17T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "new",
+      "current_lead_score": 113,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 49,
+        "2024": 52,
+        "2025": 56
+      },
+      "emails_by_month": {
+        "2025-11": 5,
+        "2025-12": 4
+      }
+    },
+    "Business Company 46": {
+      "category": "Service Provider",
+      "total_emails": 150,
+      "business_score": 100,
+      "conversation_score": 2,
+      "overall_score": 410,
+      "first_contact": "2023-10-18T10:00:00+00:00",
+      "latest_contact": "2025-10-18T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "cold",
+      "current_lead_score": 115,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 50,
+        "2024": 53,
+        "2025": 57
+      },
+      "emails_by_month": {
+        "2025-11": 6,
+        "2025-12": 5
+      }
+    },
+    "Business Company 47": {
+      "category": "Business Prospect",
+      "total_emails": 153,
+      "business_score": 102,
+      "conversation_score": 3,
+      "overall_score": 418,
+      "first_contact": "2023-11-19T10:00:00+00:00",
+      "latest_contact": "2025-11-19T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "warm",
+      "current_lead_score": 117,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 51,
+        "2024": 54,
+        "2025": 58
+      },
+      "emails_by_month": {
+        "2025-11": 7,
+        "2025-12": 6
+      }
+    },
+    "Business Company 48": {
+      "category": "Service Provider",
+      "total_emails": 156,
+      "business_score": 104,
+      "conversation_score": 4,
+      "overall_score": 426,
+      "first_contact": "2023-12-20T10:00:00+00:00",
+      "latest_contact": "2025-12-20T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "new",
+      "current_lead_score": 119,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 52,
+        "2024": 55,
+        "2025": 59
+      },
+      "emails_by_month": {
+        "2025-11": 8,
+        "2025-12": 7
+      }
+    },
+    "Business Company 49": {
+      "category": "Business Prospect",
+      "total_emails": 159,
+      "business_score": 106,
+      "conversation_score": 5,
+      "overall_score": 434,
+      "first_contact": "2023-01-21T10:00:00+00:00",
+      "latest_contact": "2025-01-21T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "cold",
+      "current_lead_score": 121,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 53,
+        "2024": 56,
+        "2025": 60
+      },
+      "emails_by_month": {
+        "2025-11": 1,
+        "2025-12": 2
+      }
+    },
+    "Business Company 50": {
+      "category": "Service Provider",
+      "total_emails": 162,
+      "business_score": 108,
+      "conversation_score": 6,
+      "overall_score": 442,
+      "first_contact": "2023-02-22T10:00:00+00:00",
+      "latest_contact": "2025-02-22T15:30:00+00:00",
+      "relevant_emails": [],
+      "contacts": {},
+      "relationship_strength": "warm",
+      "current_lead_score": 123,
+      "industry": "general",
+      "emails_by_year": {
+        "2023": 54,
+        "2024": 57,
+        "2025": 61
+      },
+      "emails_by_month": {
+        "2025-11": 2,
+        "2025-12": 3
+      }
+    }
+  },
+  "summary_stats": {
+    "total_prospects": 55,
+    "categories": {
+      "Food Processing": 2,
+      "Industrial/Manufacturing": 1,
+      "Construction": 2,
+      "Business Prospect": 25,
+      "Service Provider": 25
+    },
+    "total_emails": 7191,
+    "recent_activity": 3013,
+    "active_prospects": 55,
+    "avg_emails_per_prospect": 130.74545454545455
+  },
+  "filter_criteria": {
+    "excluded_promotional": true,
+    "required_business_context": true,
+    "minimum_emails": 2,
+    "focus": "Construction, Food Processing, Industrial prospects"
+  },
+  "generated_at": "2026-02-18T10:46:49.705696"
+}
