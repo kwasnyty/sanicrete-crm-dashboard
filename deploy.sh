@@ -1,52 +1,64 @@
 #!/bin/bash
-# SaniCrete CRM System Deployment Script
 
-echo "🚀 SaniCrete CRM System Deployment"
-echo "==================================="
-echo ""
+# SaniCrete Interactive CRM Deployment Script
+# This script builds and deploys the CRM system
 
-# Check if this is first run
-if [ ! -f ".crm_setup_complete" ]; then
-    echo "📋 First-time setup detected. Running CRM setup..."
-    ./setup-crm.sh
-    
-    if [ $? -eq 0 ]; then
-        touch .crm_setup_complete
-        echo "✅ Setup completed successfully!"
-    else
-        echo "❌ Setup failed. Please check errors above."
-        exit 1
-    fi
-    echo ""
+set -e
+
+echo "🏗️  Starting SaniCrete CRM Deployment..."
+
+# Check if we're in the right directory
+if [ ! -f "package.json" ]; then
+    echo "❌ Error: Not in a Node.js project directory"
+    echo "Please run this script from the sanicrete-crm-dashboard directory"
+    exit 1
 fi
 
-echo "🌐 Deploying SaniCrete CRM System..."
-echo ""
-echo "Available Interfaces:"
-echo "  📊 CRM System: http://localhost:8000/crm-system.html"
-echo "  📈 Analytics Dashboard: http://localhost:8000/index.html"
-echo ""
-echo "Production Deployment Options:"
-echo ""
-echo "1. 🌍 GitHub Pages (Free):"
-echo "   • Create repository: sanicrete-crm-dashboard"
-echo "   • Push code: git remote add origin <github-url>"
-echo "   • Enable Pages in repo settings"
-echo ""
-echo "2. 🚀 Netlify (Free with forms):"
-echo "   • Drag & drop folder to netlify.com"
-echo "   • Auto-deploy from GitHub"
-echo ""
-echo "3. 🔒 Private Server:"
-echo "   • Upload files to web server"
-echo "   • Ensure Python3 available for automations"
-echo ""
-echo "For now, starting local development server..."
-echo "Press Ctrl+C to stop and choose production deployment"
-echo ""
+# Install dependencies if node_modules doesn't exist
+if [ ! -d "node_modules" ]; then
+    echo "📦 Installing dependencies..."
+    npm install
+fi
 
-# Give user time to read
-sleep 5
+# Run linting and type checking
+echo "🔍 Running type checks..."
+npm run lint 2>/dev/null || echo "⚠️  Linting warnings (continuing...)"
 
-# Start development server
-./start-crm.sh
+# Build the application
+echo "🔨 Building production version..."
+npm run build
+
+# Check if build was successful
+if [ -d "out" ]; then
+    echo "✅ Build successful!"
+    echo "📁 Static files generated in 'out' directory"
+    echo ""
+    echo "🚀 Deployment Options:"
+    echo ""
+    echo "1️⃣  GitHub Pages:"
+    echo "   - Push to main branch"
+    echo "   - GitHub Actions will automatically deploy"
+    echo ""
+    echo "2️⃣  Manual hosting:"
+    echo "   - Upload 'out' directory contents to your web server"
+    echo "   - Point your domain to the uploaded files"
+    echo ""
+    echo "3️⃣  Local preview:"
+    echo "   - Run: npx serve out"
+    echo "   - Or use any static file server"
+    echo ""
+    
+    # Offer to start local preview
+    read -p "🌐 Start local preview server? (y/n): " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        echo "🌍 Starting local server at http://localhost:3000..."
+        npx serve out -p 3000
+    fi
+    
+else
+    echo "❌ Build failed!"
+    exit 1
+fi
+
+echo "🎉 Deployment preparation complete!"
