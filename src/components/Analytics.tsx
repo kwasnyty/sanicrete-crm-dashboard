@@ -103,7 +103,13 @@ const Analytics: React.FC = () => {
     const thirtyDaysAgo = new Date();
     thirtyDaysAgo.setDate(now.getDate() - 30);
 
-    const days = [];
+    const days: Array<{
+      date: string;
+      day: string;
+      companies: number;
+      emails: number;
+      followUps: number;
+    }> = [];
     for (let i = 29; i >= 0; i--) {
       const date = new Date();
       date.setDate(now.getDate() - i);
@@ -325,7 +331,7 @@ const Analytics: React.FC = () => {
                     cx="50%"
                     cy="50%"
                     labelLine={false}
-                    label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                    label={({ name, percent }) => `${name}: ${percent ? (percent * 100).toFixed(0) : '0'}%`}
                     outerRadius={80}
                     fill="#8884d8"
                     dataKey="value"

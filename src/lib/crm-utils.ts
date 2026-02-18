@@ -182,23 +182,25 @@ export const createOpenClawCronJob = async (followUp: FollowUp, companyName: str
     }
   };
 
-  // This would integrate with OpenClaw's cron system
-  try {
-    const response = await fetch('/api/openclaw/cron', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(cronData)
-    });
-    
-    if (response.ok) {
-      const result = await response.json();
-      return result.cronJobId;
-    }
-  } catch (error) {
-    console.error('Failed to create OpenClaw cron job:', error);
-  }
+  // In a static deployment, log the cron job for external processing
+  console.log('🚀 OpenClaw Cron Job Request:', cronData);
   
-  return null;
+  // For static deployment, simulate successful creation
+  const cronJobId = `crm_job_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  
+  // In a real implementation with a backend, you would:
+  // 1. Store this request in a queue/database
+  // 2. Process via webhook or batch job
+  // 3. Send to OpenClaw API when backend is available
+  
+  localStorage.setItem(`cron_job_${cronJobId}`, JSON.stringify({
+    ...cronData,
+    cronJobId,
+    created: new Date().toISOString(),
+    status: 'pending'
+  }));
+  
+  return cronJobId;
 };
 
 // Convert date to cron expression
@@ -271,21 +273,34 @@ export const executeAutomationAction = (action: AutomationRule['actions'][0], co
 
 // Notification system
 export const sendNotification = async (message: string, company?: Company) => {
-  try {
-    await fetch('/api/notifications', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        type: 'crm_alert',
-        message,
-        companyId: company?.id,
-        companyName: company?.name,
-        timestamp: new Date().toISOString()
-      })
-    });
-  } catch (error) {
-    console.error('Failed to send notification:', error);
+  const notification = {
+    id: `notification_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+    type: 'crm_alert',
+    message,
+    companyId: company?.id,
+    companyName: company?.name,
+    timestamp: new Date().toISOString(),
+    read: false
+  };
+
+  console.log('🔔 CRM Notification:', notification);
+  
+  // Store notification locally for static deployment
+  const existingNotifications = JSON.parse(localStorage.getItem('crm_notifications') || '[]');
+  existingNotifications.unshift(notification);
+  
+  // Keep only the latest 50 notifications
+  if (existingNotifications.length > 50) {
+    existingNotifications.splice(50);
   }
+  
+  localStorage.setItem('crm_notifications', JSON.stringify(existingNotifications));
+
+  // In a real implementation with backend, you would:
+  // 1. Send to notification service (email, Slack, etc.)
+  // 2. Store in database for notification history
+  // 3. Send to OpenClaw for display in main interface
+  // 4. Trigger webhook to external systems
 };
 
 // Lead scoring
