@@ -1,0 +1,80 @@
+{
+  "templates": {
+    "introduction": {
+      "subject": "SaniCrete Flooring Solutions - Industrial Flooring Specialists",
+      "body": "Hello {{company_name}},\n\nI noticed your facility might benefit from our specialized flooring solutions. SaniCrete has been helping {{category_lower}} companies with:\n\n• Epoxy floor coatings\n• Concrete surface preparation  \n• Chemical-resistant flooring\n• FDA compliant solutions\n• Facility maintenance programs\n\nOur expertise includes:\n✓ Food processing facilities\n✓ Manufacturing plants\n✓ Warehouses & distribution centers\n✓ Commercial kitchens\n✓ Industrial facilities\n\nWould you be interested in a brief call to discuss how we can help improve your facility's flooring performance?\n\nBest regards,\nTyler\nSaniCrete Flooring Solutions\n📞 [Your Phone]\n📧 [Your Email]",
+      "tags": ["introduction", "cold_outreach"]
+    },
+    
+    "quote_followup": {
+      "subject": "Follow-up: SaniCrete Flooring Quote for {{company_name}}",
+      "body": "Dear {{company_name}} Team,\n\nI wanted to follow up on the flooring quote we discussed. SaniCrete specializes in high-performance epoxy and concrete flooring solutions perfect for your facility.\n\nKey benefits for your project:\n• Seamless, easy-to-clean surfaces\n• Chemical and impact resistant\n• FDA compliant for food processing facilities\n• Custom color and texture options\n• Professional installation team\n• 15+ years experience\n\nI'd be happy to:\n✓ Schedule a site visit\n✓ Provide detailed specifications\n✓ Discuss timeline and pricing\n✓ Answer any technical questions\n\nWhen would be a good time for a brief call to move forward?\n\nBest regards,\nTyler\nSaniCrete Flooring Solutions",
+      "tags": ["followup", "quote", "warm_lead"]
+    },
+    
+    "project_inquiry": {
+      "subject": "Flooring Project Inquiry - {{company_name}}",
+      "body": "Dear {{company_name}} Team,\n\nI understand you may have upcoming flooring projects. SaniCrete specializes in solutions for {{category_lower}} facilities:\n\n🏭 OUR SERVICES:\n• Food processing facility floors\n• Industrial concrete coatings\n• Warehouse and manufacturing floors\n• Chemical resistant surfaces\n• Repair and maintenance services\n\n📋 WHAT WE PROVIDE:\n• Free site evaluations\n• Detailed project quotes\n• Professional installation\n• Material warranties\n• Ongoing maintenance support\n\n💪 WHY CHOOSE SANICRETE:\n• Licensed & insured contractors\n• FDA compliant installations\n• Competitive pricing\n• Quality materials (no shortcuts)\n• Exceptional customer service\n\nWould you like to schedule a site visit to discuss your specific needs? I can typically provide quotes within 24-48 hours of site evaluation.\n\nBest regards,\nTyler\nSaniCrete Flooring Solutions",
+      "tags": ["inquiry", "project", "site_visit"]
+    },
+    
+    "capabilities_overview": {
+      "subject": "SaniCrete Capabilities Overview for {{company_name}}",
+      "body": "Dear {{company_name}},\n\nHere's a comprehensive overview of SaniCrete's flooring capabilities:\n\n🔧 CORE SERVICES:\n• Epoxy floor coatings\n• Concrete polishing & overlays\n• Chemical resistant flooring\n• FDA compliant food-grade floors\n• Industrial floor repair\n• Surface preparation\n• Decorative concrete finishes\n\n🏭 INDUSTRIES WE SERVE:\n• Food processing facilities\n• Manufacturing plants\n• Warehouses & distribution centers\n• Commercial kitchens\n• Automotive facilities\n• Healthcare facilities\n• Retail & commercial spaces\n\n🏆 COMPETITIVE ADVANTAGES:\n• 15+ years specialized experience\n• Licensed & fully insured\n• Quality materials & installation\n• Competitive & transparent pricing\n• Comprehensive warranties\n• Ongoing support & maintenance\n• Emergency repair services\n\n📊 RECENT PROJECT EXAMPLES:\n• Large food processing plant (50,000 sq ft)\n• Manufacturing facility floor restoration\n• Commercial kitchen renovations\n• Warehouse concrete polishing\n\nI'd welcome the opportunity to discuss your specific flooring challenges and how we can provide solutions that improve safety, cleanliness, and operational efficiency.\n\nBest regards,\nTyler\nSaniCrete Flooring Solutions",
+      "tags": ["capabilities", "overview", "education"]
+    },
+    
+    "food_processing_specialist": {
+      "subject": "FDA Compliant Flooring Solutions for Food Processing - {{company_name}}",
+      "body": "Hello {{company_name}} Team,\n\nAs a food processing facility, your flooring needs are unique and critical for:\n• FDA compliance\n• Easy sanitation\n• Chemical resistance\n• Safety standards\n\n🍽️ FOOD-GRADE FLOORING EXPERTISE:\n• USDA/FDA compliant materials\n• Seamless, cove-base installations\n• Chemical resistant to cleaning agents\n• Slip-resistant textures\n• Thermal shock resistance\n• Easy to clean and maintain\n\n✅ COMPLIANCE BENEFITS:\n• Meet health department requirements\n• Pass FDA inspections with confidence\n• Reduce contamination risks\n• Improve cleaning efficiency\n• Lower long-term maintenance costs\n\n🏭 SPECIALIZED APPLICATIONS:\n• Processing floors\n• Cold storage areas\n• Loading dock areas\n• Packaging areas\n• Quality control labs\n• Employee break rooms\n\nWould you like to schedule a consultation to discuss how we can help ensure your facility meets all regulatory requirements while improving operational efficiency?\n\nBest regards,\nTyler\nSaniCrete Flooring Solutions\nFDA Compliant Flooring Specialist",
+      "tags": ["food_processing", "fda_compliance", "specialist"]
+    },
+    
+    "construction_bid_response": {
+      "subject": "SaniCrete Flooring Bid Response - {{project_name}}",
+      "body": "Dear {{company_name}} Project Team,\n\nThank you for the opportunity to bid on your flooring project. SaniCrete is excited to participate in this opportunity.\n\n📋 BID RESPONSE OVERVIEW:\n• Project: {{project_name}}\n• Scope: Industrial flooring installation\n• Timeline: [To be specified after site visit]\n• Competitive pricing with quality guarantee\n\n🏗️ CONSTRUCTION PARTNERSHIP BENEFITS:\n• Licensed general and specialty contractors\n• Bonded and insured\n• On-time project completion\n• Coordination with other trades\n• Clean, professional job sites\n• Detailed progress reporting\n\n💪 WHY PARTNER WITH SANICRETE:\n• 15+ years construction experience\n• Specialty flooring expertise\n• Quality workmanship guarantee\n• Competitive pricing\n• Excellent references available\n• Problem-solving approach\n\nNext steps:\n1. Site visit for detailed assessment\n2. Comprehensive bid preparation\n3. Timeline coordination\n4. Contract execution\n\nI'm available for a site visit at your convenience. When would work best for your schedule?\n\nBest regards,\nTyler\nSaniCrete Flooring Solutions\nLicensed Flooring Contractor",
+      "tags": ["construction", "bid_response", "contractor"]
+    },
+    
+    "maintenance_program": {
+      "subject": "Facility Maintenance Program - Keep Your Floors in Peak Condition",
+      "body": "Dear {{company_name}},\n\nProtect your flooring investment with SaniCrete's comprehensive maintenance program.\n\n🔧 MAINTENANCE PROGRAM BENEFITS:\n• Extended floor life\n• Consistent appearance\n• Reduced long-term costs\n• Scheduled maintenance (no surprises)\n• Priority emergency service\n• Detailed maintenance records\n\n📅 SERVICE OPTIONS:\n• Monthly maintenance visits\n• Quarterly deep cleaning\n• Annual condition assessments\n• Emergency repair services\n• Coating refresh programs\n• Preventive maintenance planning\n\n💰 COST SAVINGS:\n• Prevent costly floor replacements\n• Maintain optimal performance\n• Avoid emergency repair costs\n• Extend warranty coverage\n• Budget predictable expenses\n\n📊 PROGRAM INCLUDES:\n• Professional inspection\n• Cleaning and maintenance\n• Minor repair services\n• Condition documentation\n• Recommendations for improvements\n• Emergency service priority\n\nWould you like to discuss a customized maintenance program for your facility? I can provide a no-obligation assessment and program proposal.\n\nBest regards,\nTyler\nSaniCrete Flooring Solutions\nMaintenance Program Specialist",
+      "tags": ["maintenance", "service_program", "retention"]
+    },
+    
+    "emergency_repair": {
+      "subject": "Emergency Flooring Repair Services - {{company_name}}",
+      "body": "Dear {{company_name}},\n\nFlooring emergencies can't wait. SaniCrete provides fast, professional emergency repair services to get your facility back to full operation quickly.\n\n🚨 EMERGENCY SERVICES:\n• 24/7 emergency response\n• Rapid damage assessment\n• Temporary protective solutions\n• Fast-cure repair materials\n• Minimal downtime repairs\n• Insurance claim assistance\n\n⚡ RAPID RESPONSE CAPABILITIES:\n• On-site within hours\n• Quick problem diagnosis\n• Immediate temporary fixes\n• Permanent repair scheduling\n• Safety hazard mitigation\n• Operations continuity planning\n\n🔧 COMMON EMERGENCY REPAIRS:\n• Chemical spill damage\n• Impact damage from equipment\n• Water damage restoration\n• Crack repairs and sealing\n• Surface preparation issues\n• Coating failures\n\n📞 WHEN TO CALL:\n• Safety hazards present\n• Operations affected\n• Damage spreading\n• Regulatory compliance at risk\n• Equipment damage concerns\n\nSave our emergency number: [Emergency Phone]\nAvailable 24/7 for urgent flooring issues\n\nBest regards,\nTyler\nSaniCrete Flooring Solutions\nEmergency Repair Specialist",
+      "tags": ["emergency", "repair", "urgent"]
+    }
+  },
+  
+  "placeholders": {
+    "{{company_name}}": "Company name",
+    "{{category_lower}}": "Industry category in lowercase",
+    "{{project_name}}": "Specific project name",
+    "{{contact_name}}": "Contact person name",
+    "{{phone}}": "Your phone number",
+    "{{email}}": "Your email address"
+  },
+  
+  "usage_guide": {
+    "description": "Email templates for SaniCrete CRM system",
+    "instructions": [
+      "Templates use {{placeholder}} syntax for dynamic content",
+      "Copy template text and replace placeholders with actual values", 
+      "Customize content based on specific prospect needs",
+      "Track email responses in CRM system",
+      "Follow up appropriately based on template type"
+    ],
+    
+    "best_practices": [
+      "Personalize each email with company-specific details",
+      "Reference previous conversations or interactions",
+      "Include clear call-to-action",
+      "Follow up within 3-5 business days",
+      "Track all email interactions in CRM",
+      "Adjust tone based on relationship stage"
+    ]
+  }
+}
