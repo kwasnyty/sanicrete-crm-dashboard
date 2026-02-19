@@ -1,0 +1,171 @@
+{
+  "generated_at": "2026-02-19T07:04:54.997495",
+  "stats": {
+    "urgent_count": 5,
+    "opportunity_count": 12,
+    "active_projects": 8,
+    "this_week_tasks": 15
+  },
+  "urgent_contacts": [
+    {
+      "name": "David Johnson",
+      "company": "Pilgrim's Pride - Columbus, GA",
+      "email": "david.johnson@pilgrims.com",
+      "last_contact": "3 weeks ago",
+      "status": "Waiting for flooring quote response",
+      "value": "$45K+ project",
+      "tags": [
+        "Quote Overdue",
+        "Food Processing"
+      ],
+      "priority": "urgent"
+    },
+    {
+      "name": "Sarah Mitchell",
+      "company": "JBS USA - Greeley, CO",
+      "email": "sarah.mitchell@jbssa.com",
+      "last_contact": "2 weeks ago",
+      "status": "Project proposal submitted, no response",
+      "value": "$78K+ facility upgrade",
+      "tags": [
+        "No Response",
+        "Meat Processing"
+      ],
+      "priority": "urgent"
+    },
+    {
+      "name": "Mike Chen",
+      "company": "ConAgra Foods - Omaha, NE",
+      "email": "mike.chen@conagra.com",
+      "last_contact": "4 weeks ago",
+      "status": "Follow-up on facility inspection results",
+      "value": "$32K repair project",
+      "tags": [
+        "Follow-up Overdue",
+        "Food Manufacturing"
+      ],
+      "priority": "urgent"
+    },
+    {
+      "name": "Patricia Williams",
+      "company": "Smithfield Foods - Virginia",
+      "email": "pwilliams@smithfield.com",
+      "last_contact": "3 weeks ago",
+      "status": "Awaiting approval on expansion proposal",
+      "value": "$95K+ expansion",
+      "tags": [
+        "Approval Pending",
+        "Pork Processing"
+      ],
+      "priority": "urgent"
+    },
+    {
+      "name": "Robert Martinez",
+      "company": "Hormel Foods - Austin, MN",
+      "email": "rmartinez@hormel.com",
+      "last_contact": "2.5 weeks ago",
+      "status": "Contract negotiation stalled",
+      "value": "$52K maintenance project",
+      "tags": [
+        "Contract Issues",
+        "Food Processing"
+      ],
+      "priority": "urgent"
+    }
+  ],
+  "follow_up_contacts": [
+    {
+      "name": "Rick Thompson",
+      "company": "Tyson Foods - Springdale, AR",
+      "email": "rick.thompson@tyson.com",
+      "last_contact": "1 week ago",
+      "status": "Discussing new formulation options",
+      "next_action": "Send additive samples by Friday",
+      "tags": [
+        "Sample Due Fri",
+        "Poultry Processing"
+      ],
+      "priority": "follow-up"
+    },
+    {
+      "name": "Lisa Rodriguez",
+      "company": "Hormel Foods - Austin, MN",
+      "email": "lrodriguez@hormel.com",
+      "last_contact": "5 days ago",
+      "status": "Reviewing maintenance schedule",
+      "next_action": "Schedule site visit this week",
+      "tags": [
+        "Schedule Visit",
+        "Food Processing"
+      ],
+      "priority": "follow-up"
+    },
+    {
+      "name": "James Burke",
+      "company": "Burke Corporation - Nevada, IA",
+      "email": "jburke@burkecorp.com",
+      "last_contact": "3 days ago",
+      "status": "Quote revision requested",
+      "next_action": "Updated pricing by Wednesday",
+      "tags": [
+        "Quote Update",
+        "Meat Processing"
+      ],
+      "priority": "follow-up"
+    },
+    {
+      "name": "Chester Williams",
+      "company": "Farmland Foods - Kansas City, MO",
+      "email": "cwilliams@farmlandfoods.com",
+      "last_contact": "4 days ago",
+      "status": "Discussing project timeline",
+      "next_action": "Check-in on decision status",
+      "tags": [
+        "Decision Check",
+        "Food Manufacturing"
+      ],
+      "priority": "follow-up"
+    }
+  ],
+  "opportunities": [
+    {
+      "name": "Amanda Foster",
+      "company": "Cargill - Minneapolis, MN",
+      "email": "afoster@cargill.com",
+      "last_contact": "2 days ago",
+      "status": "Evaluating multiple facility locations",
+      "potential": "$125K+ multi-site project",
+      "tags": [
+        "Multi-Site Deal",
+        "Food Processing"
+      ],
+      "priority": "opportunity"
+    },
+    {
+      "name": "Tom Bradley",
+      "company": "Swift & Company - Greeley, CO",
+      "email": "tbradley@swift.com",
+      "last_contact": "1 week ago",
+      "status": "Budget approved, planning phase",
+      "potential": "$89K expansion project",
+      "tags": [
+        "Budget Approved",
+        "Beef Processing"
+      ],
+      "priority": "opportunity"
+    },
+    {
+      "name": "Maria Santos",
+      "company": "Perdue Farms - Salisbury, MD",
+      "email": "msantos@perdue.com",
+      "last_contact": "3 days ago",
+      "status": "Comparing vendor proposals",
+      "potential": "$67K facility upgrade",
+      "tags": [
+        "Vendor Comparison",
+        "Poultry Processing"
+      ],
+      "priority": "opportunity"
+    }
+  ]
+}
