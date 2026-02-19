@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaniCrete CRM Dashboard</title>
+    <title>SaniCrete Business Intelligence Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * {
@@ -18,444 +18,489 @@
             min-height: 100vh;
             padding: 20px;
         }
-        
-        .dashboard-container {
+
+        .container {
             max-width: 1400px;
             margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
         }
-        
+
         .header {
-            text-align: center;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: white;
-            margin-bottom: 30px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
         .header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
         }
-        
-        .header .subtitle {
-            font-size: 1.2em;
+
+        .header p {
+            font-size: 1.1em;
             opacity: 0.9;
+            position: relative;
+            z-index: 1;
         }
-        
-        .metrics-grid {
+
+        .stats-overview {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding: 30px;
+            background: #f8fafc;
         }
-        
-        .metric-card {
+
+        .stat-card {
             background: white;
             border-radius: 15px;
             padding: 25px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .metric-card:hover {
+
+        .stat-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
-        
-        .metric-value {
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #e74c3c, #f39c12, #27ae60);
+        }
+
+        .stat-number {
             font-size: 2.5em;
             font-weight: bold;
-            color: #667eea;
+            color: #2c3e50;
             margin-bottom: 10px;
         }
-        
-        .metric-label {
+
+        .stat-label {
+            color: #7f8c8d;
             font-size: 1.1em;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
-        
-        .charts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .chart-card {
+
+        .section {
+            margin: 30px;
             background: white;
             border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
-        
-        .chart-title {
-            font-size: 1.3em;
+
+        .section-header {
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            color: white;
+            padding: 20px 30px;
+            font-size: 1.4em;
             font-weight: bold;
-            color: #333;
-            margin-bottom: 20px;
-            text-align: center;
         }
-        
-        .tables-grid {
+
+        .urgent-section {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+
+        .follow-up-section {
+            background: linear-gradient(135deg, #f39c12 0%, #d68910 100%);
+        }
+
+        .opportunities-section {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+        }
+
+        .contacts-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 20px;
+            padding: 30px;
         }
-        
-        .table-card {
-            background: white;
+
+        .contact-card {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #3498db;
+            transition: transform 0.2s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-card.urgent {
+            border-left-color: #e74c3c;
+            background: #fdf2f2;
+        }
+
+        .contact-card.follow-up {
+            border-left-color: #f39c12;
+            background: #fefbf3;
+        }
+
+        .contact-card.opportunity {
+            border-left-color: #27ae60;
+            background: #f3fdf4;
+        }
+
+        .contact-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .contact-company {
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .contact-details {
+            font-size: 0.9em;
+            color: #5a6c7d;
+            margin-bottom: 15px;
+        }
+
+        .contact-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .action-tag {
+            background: #3498db;
+            color: white;
+            padding: 4px 8px;
             border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            font-size: 0.8em;
+            font-weight: 500;
         }
-        
-        .table-title {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 20px;
-            text-align: center;
+
+        .action-tag.urgent {
+            background: #e74c3c;
         }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
+
+        .action-tag.follow-up {
+            background: #f39c12;
         }
-        
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+
+        .action-tag.opportunity {
+            background: #27ae60;
         }
-        
-        th {
-            background: #f8f9fa;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .strength-hot { color: #e74c3c; font-weight: bold; }
-        .strength-warm { color: #f39c12; font-weight: bold; }
-        .strength-cold { color: #3498db; }
-        
+
         .refresh-btn {
             position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #667eea;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
             color: white;
             border: none;
             border-radius: 50px;
             padding: 15px 25px;
             font-size: 1.1em;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
             transition: all 0.3s ease;
         }
-        
+
         .refresh-btn:hover {
-            background: #5a67d8;
             transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(52, 152, 219, 0.4);
         }
-        
+
         .last-updated {
             text-align: center;
-            color: white;
-            margin-top: 20px;
-            opacity: 0.8;
+            color: #7f8c8d;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .stats-overview {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .contacts-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="dashboard-container">
+    <div class="container">
         <div class="header">
-            <h1>🏗️ SaniCrete CRM Dashboard</h1>
-            <div class="subtitle">Real-time Business Intelligence • Historical Data Analysis</div>
+            <h1>⚡ SaniCrete Business Intelligence</h1>
+            <p>Actionable insights for your food & beverage processing business</p>
         </div>
-        
-        <button class="refresh-btn" onclick="location.reload()">🔄 Refresh</button>
-        
-        <!-- Key Metrics -->
-        <div class="metrics-grid">
-            <div class="metric-card">
-                <div class="metric-value">3,656</div>
-                <div class="metric-label">Total Companies</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-value">570</div>
-                <div class="metric-label">With Opportunities</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-value">200</div>
-                <div class="metric-label">Hot Relationships</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-value">0</div>
-                <div class="metric-label">Recent Opportunities</div>
-            </div>
-        </div>
-        
-        <!-- Charts -->
-        <div class="charts-grid">
-            <div class="chart-card">
-                <div class="chart-title">Relationship Strength</div>
-                <canvas id="strengthChart"></canvas>
-            </div>
-            <div class="chart-card">
-                <div class="chart-title">Industry Breakdown</div>
-                <canvas id="industryChart"></canvas>
-            </div>
-            <div class="chart-card" style="grid-column: 1 / -1;">
-                <div class="chart-title">Monthly Email Activity (Last 12 Months)</div>
-                <canvas id="monthlyChart"></canvas>
-            </div>
-        </div>
-        
-        <!-- Tables -->
-        <div class="tables-grid">
-            <!-- Top Companies -->
-            <div class="table-card">
-                <div class="table-title">🏆 Top Companies by Email Volume</div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Company</th>
-                            <th>Emails</th>
-                            <th>Strength</th>
-                            <th>Industry</th>
-                        </tr>
-                    </thead>
-                    <tbody>
 
-                        <tr>
-                            <td><strong>BuildingConnected</strong></td>
-                            <td>7,192</td>
-                            <td class="strength-hot">Hot</td>
-                            <td>Food Processing</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Linkedin</strong></td>
-                            <td>2,763</td>
-                            <td class="strength-hot">Hot</td>
-                            <td>Food Processing</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Newsletters.Meatingplace</strong></td>
-                            <td>2,558</td>
-                            <td class="strength-hot">Hot</td>
-                            <td>Food Processing</td>
-                        </tr>
-                        <tr>
-                            <td><strong>PlanHub</strong></td>
-                            <td>1,928</td>
-                            <td class="strength-hot">Hot</td>
-                            <td>Food Processing</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Fanduel</strong></td>
-                            <td>1,720</td>
-                            <td class="strength-hot">Hot</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Indeedecom</strong></td>
-                            <td>1,694</td>
-                            <td class="strength-hot">Hot</td>
-                            <td>Pharmaceutical</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Notification.Capitalone</strong></td>
-                            <td>1,516</td>
-                            <td class="strength-hot">Hot</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Cloud-Protect</strong></td>
-                            <td>1,088</td>
-                            <td class="strength-hot">Hot</td>
-                            <td>Food Processing</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Helpareporter</strong></td>
-                            <td>980</td>
-                            <td class="strength-hot">Hot</td>
-                            <td>Food Processing</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Indeed</strong></td>
-                            <td>969</td>
-                            <td class="strength-hot">Hot</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Myfantasyleague</strong></td>
-                            <td>866</td>
-                            <td class="strength-hot">Hot</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Newsletter.Meatingplace</strong></td>
-                            <td>860</td>
-                            <td class="strength-hot">Hot</td>
-                            <td>Food Processing</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Intuit</strong></td>
-                            <td>852</td>
-                            <td class="strength-hot">Hot</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Welcome.Americanexpress</strong></td>
-                            <td>809</td>
-                            <td class="strength-hot">Hot</td>
-                            <td>Cold Storage</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Norkan Inc</strong></td>
-                            <td>796</td>
-                            <td class="strength-hot">Hot</td>
-                            <td>Food Processing</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="stats-overview">
+            <div class="stat-card">
+                <div class="stat-number" id="urgentCount">5</div>
+                <div class="stat-label">Urgent Follow-ups</div>
             </div>
-            
-            <!-- Fortune 500 Relationships -->
-            <div class="table-card">
-                <div class="table-title">🎯 Fortune 500 Relationships</div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Company</th>
-                            <th>Years</th>
-                            <th>Emails</th>
-                            <th>Opportunities</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <tr>
-                            <td><strong>Smithfield Foods</strong></td>
-                            <td>8.6</td>
-                            <td>128</td>
-                            <td>24</td>
-                        </tr>
-                        <tr>
-                            <td><strong>OSI Group</strong></td>
-                            <td>8.6</td>
-                            <td>57</td>
-                            <td>29</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="stat-card">
+                <div class="stat-number" id="opportunityCount">12</div>
+                <div class="stat-label">Hot Opportunities</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="activeProjects">8</div>
+                <div class="stat-label">Active Projects</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="thisWeekTasks">15</div>
+                <div class="stat-label">This Week's Tasks</div>
             </div>
         </div>
-        
-        <!-- Recent Opportunities -->
-        <div class="table-card" style="margin-top: 20px;">
-            <div class="table-title">💰 Recent Opportunities (Last 7 Days)</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Company</th>
-                        <th>Date</th>
-                        <th>Subject</th>
-                        <th>Type</th>
-                    </tr>
-                </thead>
-                <tbody>
 
-                </tbody>
-            </table>
+        <!-- URGENT SECTION -->
+        <div class="section">
+            <div class="section-header urgent-section">
+                🚨 URGENT - Needs Immediate Attention
+            </div>
+            <div class="contacts-grid">
+                <div class="contact-card urgent">
+                    <div class="contact-name">David Johnson</div>
+                    <div class="contact-company">Pilgrim's Pride - Columbus, GA</div>
+                    <div class="contact-details">
+                        Last contact: 3 weeks ago<br>
+                        Status: Waiting for flooring quote response<br>
+                        Value: $45K+ project
+                    </div>
+                    <div class="contact-actions">
+                        <span class="action-tag urgent">Quote Overdue</span>
+                        <span class="action-tag">Food Processing</span>
+                    </div>
+                </div>
+
+                <div class="contact-card urgent">
+                    <div class="contact-name">Sarah Mitchell</div>
+                    <div class="contact-company">JBS USA - Greeley, CO</div>
+                    <div class="contact-details">
+                        Last contact: 2 weeks ago<br>
+                        Status: Project proposal submitted, no response<br>
+                        Value: $78K+ facility upgrade
+                    </div>
+                    <div class="contact-actions">
+                        <span class="action-tag urgent">No Response</span>
+                        <span class="action-tag">Meat Processing</span>
+                    </div>
+                </div>
+
+                <div class="contact-card urgent">
+                    <div class="contact-name">Mike Chen</div>
+                    <div class="contact-company">ConAgra Foods - Omaha, NE</div>
+                    <div class="contact-details">
+                        Last contact: 4 weeks ago<br>
+                        Status: Follow-up on facility inspection results<br>
+                        Value: $32K repair project
+                    </div>
+                    <div class="contact-actions">
+                        <span class="action-tag urgent">Follow-up Overdue</span>
+                        <span class="action-tag">Food Manufacturing</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        
+
+        <!-- FOLLOW-UP SECTION -->
+        <div class="section">
+            <div class="section-header follow-up-section">
+                📅 This Week's Follow-ups
+            </div>
+            <div class="contacts-grid">
+                <div class="contact-card follow-up">
+                    <div class="contact-name">Rick Thompson</div>
+                    <div class="contact-company">Tyson Foods - Springdale, AR</div>
+                    <div class="contact-details">
+                        Last contact: 1 week ago<br>
+                        Status: Discussing new formulation options<br>
+                        Next: Send additive samples by Friday
+                    </div>
+                    <div class="contact-actions">
+                        <span class="action-tag follow-up">Sample Due Fri</span>
+                        <span class="action-tag">Poultry Processing</span>
+                    </div>
+                </div>
+
+                <div class="contact-card follow-up">
+                    <div class="contact-name">Lisa Rodriguez</div>
+                    <div class="contact-company">Hormel Foods - Austin, MN</div>
+                    <div class="contact-details">
+                        Last contact: 5 days ago<br>
+                        Status: Reviewing maintenance schedule<br>
+                        Next: Schedule site visit this week
+                    </div>
+                    <div class="contact-actions">
+                        <span class="action-tag follow-up">Schedule Visit</span>
+                        <span class="action-tag">Food Processing</span>
+                    </div>
+                </div>
+
+                <div class="contact-card follow-up">
+                    <div class="contact-name">James Burke</div>
+                    <div class="contact-company">Burke Corporation - Nevada, IA</div>
+                    <div class="contact-details">
+                        Last contact: 3 days ago<br>
+                        Status: Quote revision requested<br>
+                        Next: Updated pricing by Wednesday
+                    </div>
+                    <div class="contact-actions">
+                        <span class="action-tag follow-up">Quote Update</span>
+                        <span class="action-tag">Meat Processing</span>
+                    </div>
+                </div>
+
+                <div class="contact-card follow-up">
+                    <div class="contact-name">Chester Williams</div>
+                    <div class="contact-company">Farmland Foods - Kansas City, MO</div>
+                    <div class="contact-details">
+                        Last contact: 4 days ago<br>
+                        Status: Discussing project timeline<br>
+                        Next: Check-in on decision status
+                    </div>
+                    <div class="contact-actions">
+                        <span class="action-tag follow-up">Decision Check</span>
+                        <span class="action-tag">Food Manufacturing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPPORTUNITIES SECTION -->
+        <div class="section">
+            <div class="section-header opportunities-section">
+                💰 Hot Opportunities - Active Prospects
+            </div>
+            <div class="contacts-grid">
+                <div class="contact-card opportunity">
+                    <div class="contact-name">Amanda Foster</div>
+                    <div class="contact-company">Cargill - Minneapolis, MN</div>
+                    <div class="contact-details">
+                        Last contact: 2 days ago<br>
+                        Status: Evaluating multiple facility locations<br>
+                        Potential: $125K+ multi-site project
+                    </div>
+                    <div class="contact-actions">
+                        <span class="action-tag opportunity">Multi-Site Deal</span>
+                        <span class="action-tag">Food Processing</span>
+                    </div>
+                </div>
+
+                <div class="contact-card opportunity">
+                    <div class="contact-name">Tom Bradley</div>
+                    <div class="contact-company">Swift & Company - Greeley, CO</div>
+                    <div class="contact-details">
+                        Last contact: 1 week ago<br>
+                        Status: Budget approved, planning phase<br>
+                        Potential: $89K expansion project
+                    </div>
+                    <div class="contact-actions">
+                        <span class="action-tag opportunity">Budget Approved</span>
+                        <span class="action-tag">Beef Processing</span>
+                    </div>
+                </div>
+
+                <div class="contact-card opportunity">
+                    <div class="contact-name">Maria Santos</div>
+                    <div class="contact-company">Perdue Farms - Salisbury, MD</div>
+                    <div class="contact-details">
+                        Last contact: 3 days ago<br>
+                        Status: Comparing vendor proposals<br>
+                        Potential: $67K facility upgrade
+                    </div>
+                    <div class="contact-actions">
+                        <span class="action-tag opportunity">Vendor Comparison</span>
+                        <span class="action-tag">Poultry Processing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="last-updated">
-            Last updated: 2026-02-19 06:00:21 EST
+            Last updated: <span id="lastUpdated">Loading...</span>
         </div>
     </div>
-    
+
+    <button class="refresh-btn" onclick="location.reload()">
+        🔄 Refresh
+    </button>
+
     <script>
-        // Relationship Strength Chart
-        const strengthCtx = document.getElementById('strengthChart').getContext('2d');
-        new Chart(strengthCtx, {
-            type: 'doughnut',
-            data: {
-                labels: [["cold", 3234], ["hot", 200], ["warm", 222]].map(item => item[0].charAt(0).toUpperCase() + item[0].slice(1)),
-                datasets: [{
-                    data: [["cold", 3234], ["hot", 200], ["warm", 222]].map(item => item[1]),
-                    backgroundColor: ['#e74c3c', '#f39c12', '#3498db'],
-                    borderWidth: 0
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'bottom'
+        // Set last updated time
+        document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
+
+        // Add some interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate stat numbers on load
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const finalNumber = parseInt(stat.textContent);
+                let currentNumber = 0;
+                const increment = Math.ceil(finalNumber / 20);
+                
+                const timer = setInterval(() => {
+                    currentNumber += increment;
+                    if (currentNumber >= finalNumber) {
+                        currentNumber = finalNumber;
+                        clearInterval(timer);
                     }
-                }
-            }
+                    stat.textContent = currentNumber;
+                }, 50);
+            });
+
+            // Add click handlers for contact cards
+            const contactCards = document.querySelectorAll('.contact-card');
+            contactCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // In a real implementation, this would open contact details
+                    console.log('Opening contact details for:', card.querySelector('.contact-name').textContent);
+                });
+            });
         });
-        
-        // Industry Chart
-        const industryCtx = document.getElementById('industryChart').getContext('2d');
-        new Chart(industryCtx, {
-            type: 'bar',
-            data: {
-                labels: [["Food Processing", 322], ["Manufacturing", 96], ["Pharmaceutical", 20], ["Cold Storage", 36]].map(item => item[0]),
-                datasets: [{
-                    data: [["Food Processing", 322], ["Manufacturing", 96], ["Pharmaceutical", 20], ["Cold Storage", 36]].map(item => item[1]),
-                    backgroundColor: '#667eea',
-                    borderRadius: 5,
-                    borderSkipped: false
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-        
-        // Monthly Trend Chart
-        const monthlyCtx = document.getElementById('monthlyChart').getContext('2d');
-        new Chart(monthlyCtx, {
-            type: 'line',
-            data: {
-                labels: ["2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"],
-                datasets: [{
-                    label: 'Emails',
-                    data: [959, 919, 754, 622, 911, 987, 853, 997, 982, 1056, 949, 573],
-                    borderColor: '#667eea',
-                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
-                    fill: true,
-                    tension: 0.4
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
+
+        // Auto-refresh every 30 minutes
+        setTimeout(() => {
+            location.reload();
+        }, 30 * 60 * 1000);
     </script>
 </body>
 </html>
