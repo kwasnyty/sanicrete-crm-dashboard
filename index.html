@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaniCrete Business Intelligence Dashboard</title>
+    <title>SaniCrete Business Intelligence - Real Data Analysis</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -33,44 +29,22 @@
             color: white;
             padding: 30px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(2deg); }
         }
 
         .header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
-            position: relative;
-            z-index: 1;
         }
 
         .header p {
             font-size: 1.1em;
             opacity: 0.9;
-            position: relative;
-            z-index: 1;
         }
 
         .stats-overview {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
             padding: 30px;
             background: #f8fafc;
         }
@@ -78,31 +52,13 @@
         .stat-card {
             background: white;
             border-radius: 15px;
-            padding: 25px;
+            padding: 20px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #3498db, #e74c3c, #f39c12, #27ae60);
         }
 
         .stat-number {
-            font-size: 2.5em;
+            font-size: 2em;
             font-weight: bold;
             color: #2c3e50;
             margin-bottom: 10px;
@@ -110,7 +66,7 @@
 
         .stat-label {
             color: #7f8c8d;
-            font-size: 1.1em;
+            font-size: 0.9em;
         }
 
         .section {
@@ -122,28 +78,20 @@
         }
 
         .section-header {
-            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
             color: white;
             padding: 20px 30px;
             font-size: 1.4em;
             font-weight: bold;
         }
 
-        .urgent-section {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-        }
-
-        .follow-up-section {
-            background: linear-gradient(135deg, #f39c12 0%, #d68910 100%);
-        }
-
-        .opportunities-section {
-            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
-        }
+        .critical-section { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
+        .urgency-section { background: linear-gradient(135deg, #f39c12 0%, #d68910 100%); }
+        .stalled-section { background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); }
+        .maintenance-section { background: linear-gradient(135deg, #27ae60 0%, #229954 100%); }
 
         .contacts-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 20px;
             padding: 30px;
         }
@@ -154,26 +102,14 @@
             padding: 20px;
             border-left: 4px solid #3498db;
             transition: transform 0.2s ease;
+            position: relative;
         }
 
-        .contact-card:hover {
-            transform: translateX(5px);
-        }
-
-        .contact-card.urgent {
-            border-left-color: #e74c3c;
-            background: #fdf2f2;
-        }
-
-        .contact-card.follow-up {
-            border-left-color: #f39c12;
-            background: #fefbf3;
-        }
-
-        .contact-card.opportunity {
-            border-left-color: #27ae60;
-            background: #f3fdf4;
-        }
+        .contact-card:hover { transform: translateX(5px); }
+        .contact-card.critical { border-left-color: #e74c3c; background: #fdf2f2; }
+        .contact-card.urgency { border-left-color: #f39c12; background: #fefbf3; }
+        .contact-card.stalled { border-left-color: #9b59b6; background: #f8f4fd; }
+        .contact-card.maintenance { border-left-color: #27ae60; background: #f3fdf4; }
 
         .contact-name {
             font-size: 1.2em;
@@ -185,59 +121,64 @@
         .contact-company {
             color: #7f8c8d;
             margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+
+        .contact-email {
+            color: #3498db;
+            font-size: 0.8em;
+            margin-bottom: 15px;
+            word-break: break-all;
+        }
+
+        .urgency-score {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
         }
 
         .contact-details {
             font-size: 0.9em;
             color: #5a6c7d;
             margin-bottom: 15px;
+            line-height: 1.4;
         }
 
-        .contact-actions {
+        .contact-metrics {
             display: flex;
-            gap: 10px;
+            gap: 15px;
+            margin-bottom: 15px;
             flex-wrap: wrap;
         }
 
-        .action-tag {
-            background: #3498db;
-            color: white;
-            padding: 4px 8px;
+        .metric {
+            background: #ecf0f1;
+            padding: 5px 10px;
             border-radius: 15px;
             font-size: 0.8em;
-            font-weight: 500;
+            color: #2c3e50;
         }
 
-        .action-tag.urgent {
+        .commitments {
             background: #e74c3c;
-        }
-
-        .action-tag.follow-up {
-            background: #f39c12;
-        }
-
-        .action-tag.opportunity {
-            background: #27ae60;
-        }
-
-        .refresh-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
             color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 15px 25px;
-            font-size: 1.1em;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
-            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 0.9em;
         }
 
-        .refresh-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(52, 152, 219, 0.4);
+        .keywords {
+            color: #7f8c8d;
+            font-size: 0.8em;
+            font-style: italic;
+            line-height: 1.3;
         }
 
         .last-updated {
@@ -245,23 +186,12 @@
             color: #7f8c8d;
             padding: 20px;
             font-size: 0.9em;
+            background: #f8fafc;
         }
 
         @media (max-width: 768px) {
-            .stats-overview {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-                padding: 20px;
-            }
-
-            .contacts-grid {
-                grid-template-columns: 1fr;
-                padding: 20px;
-            }
-
-            .header h1 {
-                font-size: 2em;
-            }
+            .stats-overview { grid-template-columns: repeat(2, 1fr); }
+            .contacts-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -269,238 +199,193 @@
     <div class="container">
         <div class="header">
             <h1>⚡ SaniCrete Business Intelligence</h1>
-            <p>Actionable insights for your food & beverage processing business</p>
+            <p>Deep Analysis of Real Business Data - Daily Refresh</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                Analyzed 397 contacts | Generated: 2026-02-19 07:14 AM
+            </p>
         </div>
 
         <div class="stats-overview">
             <div class="stat-card">
-                <div class="stat-number" id="urgentCount">5</div>
-                <div class="stat-label">Urgent Follow-ups</div>
+                <div class="stat-number">2</div>
+                <div class="stat-label">Critical Missed<br>Commitments</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number" id="opportunityCount">12</div>
-                <div class="stat-label">Hot Opportunities</div>
+                <div class="stat-number">15</div>
+                <div class="stat-label">High Urgency<br>Follow-ups</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number" id="activeProjects">8</div>
-                <div class="stat-label">Active Projects</div>
+                <div class="stat-number">0</div>
+                <div class="stat-label">Stalled<br>Negotiations</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number" id="thisWeekTasks">15</div>
-                <div class="stat-label">This Week's Tasks</div>
+                <div class="stat-number">0</div>
+                <div class="stat-label">Relationship<br>Opportunities</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">397</div>
+                <div class="stat-label">Total Business<br>Contacts</div>
             </div>
         </div>
-
-        <!-- URGENT SECTION -->
         <div class="section">
-            <div class="section-header urgent-section">
-                🚨 URGENT - Needs Immediate Attention
+            <div class="section-header critical-section">
+                🚨 CRITICAL MISSED COMMITMENTS - ACTION REQUIRED
             </div>
             <div class="contacts-grid">
-                <div class="contact-card urgent">
-                    <div class="contact-name">David Johnson</div>
-                    <div class="contact-company">Pilgrim's Pride - Columbus, GA</div>
+                <div class="contact-card critical">
+                    <div class="urgency-score">20.3</div>
+                    <div class="contact-name">Korpack</div>
+                    <div class="contact-company">Korpack</div>
+                    <div class="contact-email">info@korpack.com</div>
+                    <div class="commitments">💬 Commitment patterns: get back, get back</div>
                     <div class="contact-details">
-                        Last contact: 3 weeks ago<br>
-                        Status: Waiting for flooring quote response<br>
-                        Value: $45K+ project
+                        <strong>Last contact:</strong> 1675 days ago<br>
+                        <strong>Email history:</strong> 66 total emails<br>
+                        <strong>Business score:</strong> 2/20
                     </div>
-                    <div class="contact-actions">
-                        <span class="action-tag urgent">Quote Overdue</span>
-                        <span class="action-tag">Food Processing</span>
+                    <div class="contact-metrics">
+                        <span class="metric">🕒 1675 days</span>
+                        <span class="metric">📧 66 emails</span>
+                        <span class="metric">🎯 Score: 2</span>
                     </div>
+                    <div class="keywords">Recent context: thanks for the request tyler, someone will get back to you asap.; newsletter / marketing: how do you...</div>
                 </div>
-
-                <div class="contact-card urgent">
-                    <div class="contact-name">Sarah Mitchell</div>
-                    <div class="contact-company">JBS USA - Greeley, CO</div>
+                <div class="contact-card critical">
+                    <div class="urgency-score">19.0</div>
+                    <div class="contact-name">ACE The Shark</div>
+                    <div class="contact-company">Clockshark</div>
+                    <div class="contact-email">hello@clockshark.com</div>
+                    <div class="commitments">💬 Commitment patterns: have</div>
                     <div class="contact-details">
-                        Last contact: 2 weeks ago<br>
-                        Status: Project proposal submitted, no response<br>
-                        Value: $78K+ facility upgrade
+                        <strong>Last contact:</strong> 1967 days ago<br>
+                        <strong>Email history:</strong> 173 total emails<br>
+                        <strong>Business score:</strong> 2/20
                     </div>
-                    <div class="contact-actions">
-                        <span class="action-tag urgent">No Response</span>
-                        <span class="action-tag">Meat Processing</span>
+                    <div class="contact-metrics">
+                        <span class="metric">🕒 1967 days</span>
+                        <span class="metric">📧 173 emails</span>
+                        <span class="metric">🎯 Score: 2</span>
                     </div>
-                </div>
-
-                <div class="contact-card urgent">
-                    <div class="contact-name">Mike Chen</div>
-                    <div class="contact-company">ConAgra Foods - Omaha, NE</div>
-                    <div class="contact-details">
-                        Last contact: 4 weeks ago<br>
-                        Status: Follow-up on facility inspection results<br>
-                        Value: $32K repair project
-                    </div>
-                    <div class="contact-actions">
-                        <span class="action-tag urgent">Follow-up Overdue</span>
-                        <span class="action-tag">Food Manufacturing</span>
-                    </div>
+                    <div class="keywords">Recent context: newsletter / marketing: secrets to nail certified payroll [free webinar]; newsletter / marketing: se...</div>
                 </div>
             </div>
         </div>
-
-        <!-- FOLLOW-UP SECTION -->
         <div class="section">
-            <div class="section-header follow-up-section">
-                📅 This Week's Follow-ups
+            <div class="section-header urgency-section">
+                🔥 HIGH URGENCY FOLLOW-UPS
             </div>
             <div class="contacts-grid">
-                <div class="contact-card follow-up">
-                    <div class="contact-name">Rick Thompson</div>
-                    <div class="contact-company">Tyson Foods - Springdale, AR</div>
+                <div class="contact-card urgency">
+                    <div class="urgency-score">23.0</div>
+                    <div class="contact-name">rtanis@springfieldind.com</div>
+                    <div class="contact-company">Springfieldind</div>
+                    <div class="contact-email">rtanis@springfieldind.com</div>
                     <div class="contact-details">
-                        Last contact: 1 week ago<br>
-                        Status: Discussing new formulation options<br>
-                        Next: Send additive samples by Friday
+                        <strong>Days since contact:</strong> 1458<br>
+                        <strong>Business relevance:</strong> 8/20<br>
+                        <strong>Email volume:</strong> 141 conversations
                     </div>
-                    <div class="contact-actions">
-                        <span class="action-tag follow-up">Sample Due Fri</span>
-                        <span class="action-tag">Poultry Processing</span>
-                    </div>
+                    <div class="keywords">Key topics: food, facility, proposal, project, quote, warehouse, flooring...</div>
                 </div>
-
-                <div class="contact-card follow-up">
-                    <div class="contact-name">Lisa Rodriguez</div>
-                    <div class="contact-company">Hormel Foods - Austin, MN</div>
+                <div class="contact-card urgency">
+                    <div class="urgency-score">22.2</div>
+                    <div class="contact-name">Adam Himmel</div>
+                    <div class="contact-company">Monogramfoods</div>
+                    <div class="contact-email">ahimmel@monogramfoods.com</div>
                     <div class="contact-details">
-                        Last contact: 5 days ago<br>
-                        Status: Reviewing maintenance schedule<br>
-                        Next: Schedule site visit this week
+                        <strong>Days since contact:</strong> 1520<br>
+                        <strong>Business relevance:</strong> 11/20<br>
+                        <strong>Email volume:</strong> 24 conversations
                     </div>
-                    <div class="contact-actions">
-                        <span class="action-tag follow-up">Schedule Visit</span>
-                        <span class="action-tag">Food Processing</span>
-                    </div>
+                    <div class="keywords">Key topics: food, proposal, project, repair, quote, maintenance, flooring, coating, concrete, contract...</div>
                 </div>
-
-                <div class="contact-card follow-up">
-                    <div class="contact-name">James Burke</div>
-                    <div class="contact-company">Burke Corporation - Nevada, IA</div>
+                <div class="contact-card urgency">
+                    <div class="urgency-score">21.8</div>
+                    <div class="contact-name">Jody Jones</div>
+                    <div class="contact-company">Ctifoods</div>
+                    <div class="contact-email">jjones@ctifoods.com</div>
                     <div class="contact-details">
-                        Last contact: 3 days ago<br>
-                        Status: Quote revision requested<br>
-                        Next: Updated pricing by Wednesday
+                        <strong>Days since contact:</strong> 1499<br>
+                        <strong>Business relevance:</strong> 7/20<br>
+                        <strong>Email volume:</strong> 96 conversations
                     </div>
-                    <div class="contact-actions">
-                        <span class="action-tag follow-up">Quote Update</span>
-                        <span class="action-tag">Meat Processing</span>
-                    </div>
+                    <div class="keywords">Key topics: food, freezer, project, plant, quote, flooring...</div>
                 </div>
-
-                <div class="contact-card follow-up">
-                    <div class="contact-name">Chester Williams</div>
-                    <div class="contact-company">Farmland Foods - Kansas City, MO</div>
+                <div class="contact-card urgency">
+                    <div class="urgency-score">20.6</div>
+                    <div class="contact-name">Tabares, Raymundo</div>
+                    <div class="contact-company">Jbssa</div>
+                    <div class="contact-email">Raymundo.Tabares@jbssa.com</div>
                     <div class="contact-details">
-                        Last contact: 4 days ago<br>
-                        Status: Discussing project timeline<br>
-                        Next: Check-in on decision status
+                        <strong>Days since contact:</strong> 1532<br>
+                        <strong>Business relevance:</strong> 9/20<br>
+                        <strong>Email volume:</strong> 33 conversations
                     </div>
-                    <div class="contact-actions">
-                        <span class="action-tag follow-up">Decision Check</span>
-                        <span class="action-tag">Food Manufacturing</span>
-                    </div>
+                    <div class="keywords">Key topics: facility, bid, proposal, project, repair, quote, flooring, contract...</div>
                 </div>
-            </div>
-        </div>
-
-        <!-- OPPORTUNITIES SECTION -->
-        <div class="section">
-            <div class="section-header opportunities-section">
-                💰 Hot Opportunities - Active Prospects
-            </div>
-            <div class="contacts-grid">
-                <div class="contact-card opportunity">
-                    <div class="contact-name">Amanda Foster</div>
-                    <div class="contact-company">Cargill - Minneapolis, MN</div>
+                <div class="contact-card urgency">
+                    <div class="urgency-score">20.1</div>
+                    <div class="contact-name">Beck, Jason</div>
+                    <div class="contact-company">Waynefarms</div>
+                    <div class="contact-email">Jason.Beck@waynefarms.com</div>
                     <div class="contact-details">
-                        Last contact: 2 days ago<br>
-                        Status: Evaluating multiple facility locations<br>
-                        Potential: $125K+ multi-site project
+                        <strong>Days since contact:</strong> 2058<br>
+                        <strong>Business relevance:</strong> 6/20<br>
+                        <strong>Email volume:</strong> 82 conversations
                     </div>
-                    <div class="contact-actions">
-                        <span class="action-tag opportunity">Multi-Site Deal</span>
-                        <span class="action-tag">Food Processing</span>
-                    </div>
+                    <div class="keywords">Key topics: project, plant, repair, quote, flooring...</div>
                 </div>
-
-                <div class="contact-card opportunity">
-                    <div class="contact-name">Tom Bradley</div>
-                    <div class="contact-company">Swift & Company - Greeley, CO</div>
+                <div class="contact-card urgency">
+                    <div class="urgency-score">20.0</div>
+                    <div class="contact-name">Jamison Harris</div>
+                    <div class="contact-company">Loadrpm</div>
+                    <div class="contact-email">jharris@LoadRPM.com</div>
                     <div class="contact-details">
-                        Last contact: 1 week ago<br>
-                        Status: Budget approved, planning phase<br>
-                        Potential: $89K expansion project
+                        <strong>Days since contact:</strong> 2117<br>
+                        <strong>Business relevance:</strong> 5/20<br>
+                        <strong>Email volume:</strong> 252 conversations
                     </div>
-                    <div class="contact-actions">
-                        <span class="action-tag opportunity">Budget Approved</span>
-                        <span class="action-tag">Beef Processing</span>
-                    </div>
+                    <div class="keywords">Key topics: warehouse, food, quote, flooring...</div>
                 </div>
-
-                <div class="contact-card opportunity">
-                    <div class="contact-name">Maria Santos</div>
-                    <div class="contact-company">Perdue Farms - Salisbury, MD</div>
+                <div class="contact-card urgency">
+                    <div class="urgency-score">20.0</div>
+                    <div class="contact-name">Deltek Events</div>
+                    <div class="contact-company">Deltek</div>
+                    <div class="contact-email">events@deltek.com</div>
                     <div class="contact-details">
-                        Last contact: 3 days ago<br>
-                        Status: Comparing vendor proposals<br>
-                        Potential: $67K facility upgrade
+                        <strong>Days since contact:</strong> 1721<br>
+                        <strong>Business relevance:</strong> 5/20<br>
+                        <strong>Email volume:</strong> 135 conversations
                     </div>
-                    <div class="contact-actions">
-                        <span class="action-tag opportunity">Vendor Comparison</span>
-                        <span class="action-tag">Poultry Processing</span>
+                    <div class="keywords">Key topics: bid, project, processing, construction, contract...</div>
+                </div>
+                <div class="contact-card urgency">
+                    <div class="urgency-score">19.0</div>
+                    <div class="contact-name">Roberta Parzynski</div>
+                    <div class="contact-company">Norkan</div>
+                    <div class="contact-email">roberta@norkan.com</div>
+                    <div class="contact-details">
+                        <strong>Days since contact:</strong> 1466<br>
+                        <strong>Business relevance:</strong> 4/20<br>
+                        <strong>Email volume:</strong> 308 conversations
                     </div>
+                    <div class="keywords">Key topics: coating, food, quote, project...</div>
                 </div>
             </div>
         </div>
-
         <div class="last-updated">
-            Last updated: <span id="lastUpdated">Loading...</span>
+            <strong>Deep Business Intelligence Analysis</strong><br>
+            Last updated: Thursday, February 19, 2026 at 07:14 AM <br>
+            Next update: Daily at 6:00 AM EST<br>
+            <em>Real data from Tyler's CRM database - 397 contacts analyzed</em>
         </div>
     </div>
 
-    <button class="refresh-btn" onclick="location.reload()">
-        🔄 Refresh
-    </button>
-
     <script>
-        // Set last updated time
-        document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
-
-        // Add some interactivity
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animate stat numbers on load
-            const statNumbers = document.querySelectorAll('.stat-number');
-            statNumbers.forEach(stat => {
-                const finalNumber = parseInt(stat.textContent);
-                let currentNumber = 0;
-                const increment = Math.ceil(finalNumber / 20);
-                
-                const timer = setInterval(() => {
-                    currentNumber += increment;
-                    if (currentNumber >= finalNumber) {
-                        currentNumber = finalNumber;
-                        clearInterval(timer);
-                    }
-                    stat.textContent = currentNumber;
-                }, 50);
-            });
-
-            // Add click handlers for contact cards
-            const contactCards = document.querySelectorAll('.contact-card');
-            contactCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    // In a real implementation, this would open contact details
-                    console.log('Opening contact details for:', card.querySelector('.contact-name').textContent);
-                });
-            });
-        });
-
-        // Auto-refresh every 30 minutes
+        // Auto-refresh every 4 hours since we're on daily updates now
         setTimeout(() => {
             location.reload();
-        }, 30 * 60 * 1000);
+        }, 4 * 60 * 60 * 1000);
     </script>
 </body>
 </html>
