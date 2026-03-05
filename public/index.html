@@ -3,295 +3,461 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaniCrete Business Command Center</title>
+    <title>SaniCrete Food Processing Intelligence</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #2c5530 0%, #1a4d2e 100%);
             color: white;
             min-height: 100vh;
-            overflow-x: hidden;
         }
-        .hero { 
-            text-align: center; 
-            padding: 60px 20px; 
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));
-        }
-        .hero h1 { 
-            font-size: 4em; 
-            margin-bottom: 20px; 
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-            animation: slideInDown 1s ease;
-        }
-        .hero .tagline { 
-            font-size: 1.4em; 
-            opacity: 0.9; 
-            animation: fadeIn 2s ease;
-        }
-        
-        @keyframes slideInDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-        
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
-        
-        .critical-alerts { 
-            background: linear-gradient(45deg, #ff4757, #ff3742);
-            margin: 30px 0; 
-            padding: 25px; 
-            border-radius: 15px;
-            animation: pulse 3s infinite;
-            box-shadow: 0 10px 30px rgba(255,71,87,0.3);
-        }
-        .critical-alerts h2 { margin-bottom: 15px; }
-        .alert-item { 
-            background: rgba(255,255,255,0.1); 
-            padding: 15px; 
-            margin: 10px 0; 
-            border-radius: 8px;
-            border-left: 4px solid #fff;
-        }
-        
-        .apps-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-            gap: 30px; 
-            margin: 40px 0; 
-        }
-        .app-card { 
-            background: rgba(255,255,255,0.1); 
-            padding: 30px; 
-            border-radius: 20px; 
-            backdrop-filter: blur(15px);
-            border: 2px solid rgba(255,255,255,0.2);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-        .app-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.6s;
-            opacity: 0;
-        }
-        .app-card:hover::before { opacity: 1; animation: shine 0.6s; }
-        .app-card:hover { 
-            transform: translateY(-10px) scale(1.02); 
-            border-color: rgba(255,255,255,0.5);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-        
-        @keyframes shine { 0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); } 100% { transform: translateX(100%) translateY(100%) rotate(45deg); } }
-        
-        .app-icon { 
-            font-size: 4em; 
-            margin-bottom: 20px; 
-            display: block;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        .app-title { 
-            font-size: 1.5em; 
-            font-weight: bold; 
-            margin-bottom: 15px;
-        }
-        .app-description { 
-            opacity: 0.9; 
-            line-height: 1.5; 
-            margin-bottom: 20px;
-        }
-        .app-status { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            margin-top: 20px;
-        }
-        .status-badge { 
-            background: #27ae60; 
-            padding: 5px 12px; 
-            border-radius: 20px; 
-            font-size: 0.9em;
-            font-weight: bold;
-        }
-        .launch-btn { 
-            background: linear-gradient(45deg, #3742fa, #2f3542); 
-            color: white; 
-            padding: 10px 20px; 
-            border: none; 
-            border-radius: 25px; 
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        .launch-btn:hover { 
-            background: linear-gradient(45deg, #2f3542, #3742fa); 
-            transform: scale(1.1);
-        }
-        
-        .stats-bar { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
-            gap: 20px; 
-            margin: 40px 0;
-            background: rgba(0,0,0,0.2);
-            padding: 30px;
-            border-radius: 15px;
-        }
-        .stat { text-align: center; }
-        .stat-value { 
-            font-size: 3em; 
-            font-weight: bold; 
-            color: #feca57;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        .stat-label { 
-            font-size: 1.1em; 
-            opacity: 0.8; 
-            margin-top: 5px;
-        }
-        
-        .github-link { 
-            position: fixed; 
-            top: 20px; 
-            right: 20px; 
-            background: rgba(0,0,0,0.8); 
-            padding: 10px 15px; 
-            border-radius: 25px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        .github-link:hover { 
-            background: #333; 
-            transform: scale(1.1);
-        }
-        
-        .footer { 
+        .header { 
             text-align: center; 
             padding: 40px 20px; 
             background: rgba(0,0,0,0.3); 
-            margin-top: 50px;
+        }
+        .header h1 { 
+            font-size: 3.5em; 
+            margin-bottom: 15px; 
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+        }
+        .tagline { 
+            font-size: 1.3em; 
+            opacity: 0.9; 
+            color: #a8e6a1;
+        }
+        
+        .container { max-width: 1600px; margin: 0 auto; padding: 0 20px; }
+        
+        .critical-section { 
+            background: linear-gradient(45deg, #d63031, #c23616);
+            margin: 25px 0; 
+            padding: 25px; 
+            border-radius: 15px;
+            animation: pulse 3s infinite;
+            box-shadow: 0 10px 30px rgba(214,48,49,0.4);
+        }
+        
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.85; } }
+        
+        .metrics-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 20px; 
+            margin: 30px 0;
+        }
+        .metric-card { 
+            background: rgba(0,0,0,0.3); 
+            padding: 25px; 
+            border-radius: 15px; 
+            text-align: center;
+            border: 2px solid rgba(168,230,161,0.3);
+        }
+        .metric-value { 
+            font-size: 3em; 
+            font-weight: bold; 
+            color: #a8e6a1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .metric-label { 
+            font-size: 1.1em; 
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        
+        .clients-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+            gap: 25px; 
+            margin: 40px 0; 
+        }
+        .client-card { 
+            background: rgba(255,255,255,0.1); 
+            padding: 30px; 
+            border-radius: 20px; 
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(168,230,161,0.2);
+            transition: transform 0.3s ease;
+        }
+        .client-card:hover { 
+            transform: translateY(-5px); 
+            border-color: rgba(168,230,161,0.5);
+        }
+        
+        .tier-1 { border-left: 5px solid #00b894; }
+        .tier-2 { border-left: 5px solid #fdcb6e; }
+        .urgent { border-left: 5px solid #e17055; }
+        
+        .client-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-bottom: 20px;
+        }
+        .company-name { 
+            font-size: 1.4em; 
+            font-weight: bold; 
+            color: #a8e6a1;
+        }
+        .industry-tag { 
+            background: rgba(0,184,148,0.8); 
+            padding: 5px 12px; 
+            border-radius: 15px; 
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        .contact-info { 
+            margin: 15px 0; 
+            padding: 15px; 
+            background: rgba(0,0,0,0.2); 
+            border-radius: 10px;
+        }
+        .contact-name { 
+            font-weight: bold; 
+            color: #a8e6a1; 
+        }
+        
+        .project-details { 
+            margin: 15px 0;
+        }
+        .project-value { 
+            font-size: 1.3em; 
+            font-weight: bold; 
+            color: #fdcb6e; 
+            margin: 10px 0;
+        }
+        
+        .status-urgent { 
+            background: #d63031; 
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 0;
+            animation: blink 2s infinite;
+        }
+        .status-active { 
+            background: #00b894; 
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .status-pending { 
+            background: #fdcb6e; 
+            color: #2c5530;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        
+        @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0.7; } }
+        
+        .industry-insights { 
+            background: rgba(0,0,0,0.4); 
+            padding: 30px; 
+            border-radius: 20px; 
+            margin: 40px 0;
+            border: 2px solid rgba(168,230,161,0.3);
+        }
+        
+        .insights-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 25px; 
+        }
+        .insight-category { 
+            background: rgba(255,255,255,0.05); 
+            padding: 20px; 
+            border-radius: 15px;
+        }
+        .insight-title { 
+            font-size: 1.2em; 
+            font-weight: bold; 
+            color: #a8e6a1; 
+            margin-bottom: 15px;
+        }
+        .insight-list { 
+            list-style: none;
+        }
+        .insight-list li { 
+            padding: 5px 0; 
+            opacity: 0.9;
+        }
+        .insight-list li::before { 
+            content: "🏭 "; 
+            margin-right: 8px;
+        }
+        
+        .action-items { 
+            background: rgba(231,112,85,0.2); 
+            padding: 25px; 
+            border-radius: 15px; 
+            margin: 30px 0;
+            border-left: 5px solid #e17055;
+        }
+        
+        .last-updated { 
+            position: fixed; 
+            bottom: 20px; 
+            right: 20px; 
+            background: rgba(0,0,0,0.8); 
+            padding: 15px; 
+            border-radius: 10px;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
-    <a href="https://github.com/kwasnyty" class="github-link">🐙 GitHub</a>
-    
-    <div class="hero">
-        <h1>🏭 SaniCrete Command Center</h1>
-        <div class="tagline">Complete Business Intelligence & Management Platform</div>
+    <div class="header">
+        <h1>🏭 SaniCrete Food Processing Intelligence</h1>
+        <div class="tagline">Industrial Flooring Specialists for USDA-Compliant Facilities</div>
     </div>
     
     <div class="container">
-        <div class="critical-alerts">
-            <h2>🚨 CRITICAL BUSINESS ALERTS</h2>
-            <div class="alert-item">
-                <strong>David Kamwana (Pilgrims Pride):</strong> $75K opportunity 18 days overdue - Email found in SPAM, accepted quote but never received follow-up
-            </div>
-            <div class="alert-item">
-                <strong>Chad Nelson (OSI Group):</strong> Weekend project quote needed for March 7-8 dairy brick repair
-            </div>
-            <div class="alert-item">
-                <strong>Warren Leighton (King's Command):</strong> Schedule confirmation 14 days overdue for March 9th flooring work
+        <div class="critical-section">
+            <h2>🚨 URGENT ACTIONS REQUIRED</h2>
+            <div style="margin-top: 15px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; margin: 10px 0; border-radius: 8px;">
+                    <strong>Pilgrims Pride (David Kamwana):</strong> $75K opportunity - Email accepting quote found in SPAM, 18 days overdue for rough numbers
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; margin: 10px 0; border-radius: 8px;">
+                    <strong>King's Command (Warren Leighton):</strong> Schedule confirmation 14 days overdue for March 9th week flooring work
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; margin: 10px 0; border-radius: 8px;">
+                    <strong>OSI Group (Chad Nelson):</strong> Weekend dairy brick repair quote needed for March 7-8 work
+                </div>
             </div>
         </div>
         
-        <div class="stats-bar">
-            <div class="stat">
-                <div class="stat-value">8,520+</div>
-                <div class="stat-label">Emails Tracked</div>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">4</div>
+                <div class="metric-label">Tier 1 Food Processing Clients</div>
             </div>
-            <div class="stat">
-                <div class="stat-value">$75K+</div>
-                <div class="stat-label">Pipeline Value</div>
+            <div class="metric-card">
+                <div class="metric-value">$305K+</div>
+                <div class="metric-label">Active Pipeline Value</div>
             </div>
-            <div class="stat">
-                <div class="stat-value">13</div>
-                <div class="stat-label">Active Priorities</div>
+            <div class="metric-card">
+                <div class="metric-value">8</div>
+                <div class="metric-label">Food Processing Facilities</div>
             </div>
-            <div class="stat">
-                <div class="stat-value">4</div>
-                <div class="stat-label">Live Apps</div>
+            <div class="metric-card">
+                <div class="metric-value">5</div>
+                <div class="metric-label">Weekend Projects</div>
             </div>
         </div>
         
-        <div class="apps-grid">
-            <div class="app-card" onclick="window.open('https://kwasnyty.github.io/sanicrete-email-intelligence/', '_blank')">
-                <span class="app-icon">📧</span>
-                <div class="app-title">Email Intelligence</div>
-                <div class="app-description">
-                    Real-time monitoring across Gmail & Outlook with advanced SPAM detection. Recovered $75K opportunity from David Kamwana hiding in SPAM folder.
+        <div class="clients-grid">
+            <div class="client-card tier-1">
+                <div class="client-header">
+                    <div class="company-name">OSI Group</div>
+                    <div class="industry-tag">Meat Processing</div>
                 </div>
-                <div class="app-status">
-                    <span class="status-badge">LIVE</span>
-                    <button class="launch-btn">Launch App</button>
+                <div class="contact-info">
+                    <div class="contact-name">Chad Nelson</div>
+                    <div>Facilities Manager • cnelson@osigroup.com</div>
                 </div>
-            </div>
-            
-            <div class="app-card" onclick="window.open('https://kwasnyty.github.io/sanicrete-business-dashboard/', '_blank')">
-                <span class="app-icon">📊</span>
-                <div class="app-title">Business Dashboard</div>
-                <div class="app-description">
-                    Comprehensive business intelligence with real-time metrics, revenue tracking, and performance analytics. Complete overview of all business operations.
+                <div class="project-details">
+                    <div>IR Burner Bays, Grind Areas, Production Floors</div>
+                    <div class="project-value">High Value - Recurring Weekend Work</div>
                 </div>
-                <div class="app-status">
-                    <span class="status-badge">LIVE</span>
-                    <button class="launch-btn">Launch App</button>
+                <div class="status-active">ACTIVE - Weekend March 7-8</div>
+                <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+                    Purchase orders, professional procurement. Reliable weekend scheduling when production down.
                 </div>
             </div>
             
-            <div class="app-card" onclick="window.open('https://kwasnyty.github.io/sanicrete-crm-system/', '_blank')">
-                <span class="app-icon">💼</span>
-                <div class="app-title">CRM System</div>
-                <div class="app-description">
-                    Advanced customer relationship management with 8,520+ email history, business scoring, and automated relationship insights using Next.js.
+            <div class="client-card tier-1">
+                <div class="client-header">
+                    <div class="company-name">CTI Foods</div>
+                    <div class="industry-tag">Prepared Foods</div>
                 </div>
-                <div class="app-status">
-                    <span class="status-badge">LIVE</span>
-                    <button class="launch-btn">Launch App</button>
+                <div class="contact-info">
+                    <div class="contact-name">Mike Dennis & Brian Jardine</div>
+                    <div>Operations & Facilities</div>
+                </div>
+                <div class="project-details">
+                    <div>Fajita Flooring Project</div>
+                    <div class="project-value">$180K+ - Active Negotiation</div>
+                </div>
+                <div class="status-active">NEGOTIATING - Call with Keith</div>
+                <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+                    Terms being worked out. Engineering approval process. High-value relationship.
                 </div>
             </div>
             
-            <div class="app-card" onclick="window.open('https://kwasnyty.github.io/sanicrete-project-manager/', '_blank')">
-                <span class="app-icon">🏗️</span>
-                <div class="app-title">Project Manager</div>
-                <div class="app-description">
-                    Calendar integration, resource scheduling, and deadline monitoring. Tracks Claxton March 28-29 work, OSI weekend projects, and more.
+            <div class="client-card urgent">
+                <div class="client-header">
+                    <div class="company-name">Pilgrims Pride</div>
+                    <div class="industry-tag">Poultry Processing</div>
                 </div>
-                <div class="app-status">
-                    <span class="status-badge">LIVE</span>
-                    <button class="launch-btn">Launch App</button>
+                <div class="contact-info">
+                    <div class="contact-name">David Kamwana</div>
+                    <div>Engineering Lead • David.Kamwana@pilgrims.com</div>
                 </div>
+                <div class="project-details">
+                    <div>1,479 SF Containment Area</div>
+                    <div class="project-value">$75K - 18 DAYS OVERDUE</div>
+                </div>
+                <div class="status-urgent">URGENT - Send Quote</div>
+                <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+                    Email accepting quote found in SPAM folder. Engineering lead with budget authority.
+                </div>
+            </div>
+            
+            <div class="client-card tier-1">
+                <div class="client-header">
+                    <div class="company-name">Burke Corporation / Hormel</div>
+                    <div class="industry-tag">Multi-Location Meat</div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-name">Curtis Palmer</div>
+                    <div>Corp Manager - Sanitation</div>
+                </div>
+                <div class="project-details">
+                    <div>Final Grind Room, Line 4/5 Pre-Oven</div>
+                    <div class="project-value">$50K+ - Quality Relationship</div>
+                </div>
+                <div class="status-active">REPAIRS - Eduardo Scheduled</div>
+                <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+                    Quality partnership. Wants to observe future projects. Multi-location potential.
+                </div>
+            </div>
+            
+            <div class="client-card tier-2">
+                <div class="client-header">
+                    <div class="company-name">Primus Builders</div>
+                    <div class="industry-tag">Food Processing GC</div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-name">Insurance Compliance Dept</div>
+                    <div>General Contractor</div>
+                </div>
+                <div class="project-details">
+                    <div>5 Active Projects: NE, KS, GA, KY, TX</div>
+                    <div class="project-value">Multi-Project Contractor</div>
+                </div>
+                <div class="status-active">ACTIVE - Multiple States</div>
+                <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+                    Specializes in food processing facilities. Multi-state operations.
+                </div>
+            </div>
+            
+            <div class="client-card tier-2">
+                <div class="client-header">
+                    <div class="company-name">Meijer Purple Cow Creamery</div>
+                    <div class="industry-tag">Dairy Processing</div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-name">Derrik Anders</div>
+                    <div>Facilities Manager</div>
+                </div>
+                <div class="project-details">
+                    <div>Raw Hallway & Separation Area Delamination</div>
+                    <div class="project-value">Medium - Weekend Premium</div>
+                </div>
+                <div class="status-pending">QUOTE SENT - April 11th</div>
+                <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+                    Dairy processing with weekend scheduling needs. Delamination repair specialist work.
+                </div>
+            </div>
+        </div>
+        
+        <div class="industry-insights">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #a8e6a1;">🎯 Food Processing Industry Intelligence</h2>
+            
+            <div class="insights-grid">
+                <div class="insight-category">
+                    <div class="insight-title">Target Industries</div>
+                    <ul class="insight-list">
+                        <li>Meat Processing Facilities</li>
+                        <li>Poultry Processing Plants</li>
+                        <li>Dairy Manufacturing</li>
+                        <li>USDA-Regulated Operations</li>
+                        <li>Food Manufacturing Plants</li>
+                    </ul>
+                </div>
+                
+                <div class="insight-category">
+                    <div class="insight-title">Ideal Contact Titles</div>
+                    <ul class="insight-list">
+                        <li>Engineering Managers</li>
+                        <li>Facilities Managers</li>
+                        <li>Sanitation Managers</li>
+                        <li>Operations Directors</li>
+                        <li>Plant Managers</li>
+                    </ul>
+                </div>
+                
+                <div class="insight-category">
+                    <div class="insight-title">Project Characteristics</div>
+                    <ul class="insight-list">
+                        <li>Weekend/Shutdown Scheduling</li>
+                        <li>USDA Compliance Requirements</li>
+                        <li>Chemical Resistance Needs</li>
+                        <li>Washdown Capabilities</li>
+                        <li>High-Temperature Resistance</li>
+                    </ul>
+                </div>
+                
+                <div class="insight-category">
+                    <div class="insight-title">Success Patterns</div>
+                    <ul class="insight-list">
+                        <li>Purchase Order Procurement</li>
+                        <li>Engineering Approval Process</li>
+                        <li>Quality Oversight Requirements</li>
+                        <li>Multi-Location Potential</li>
+                        <li>Premium Specialized Pricing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="action-items">
+            <h3 style="margin-bottom: 20px; color: #e17055;">⚡ IMMEDIATE ACTION ITEMS</h3>
+            <div style="margin: 10px 0;">
+                <strong>1. David Kamwana (Pilgrims Pride):</strong> Send rough numbers quote for 1,479 SF containment area (18 days overdue)
+            </div>
+            <div style="margin: 10px 0;">
+                <strong>2. Warren Leighton (King's Command):</strong> Confirm March 9th week schedule (14 days overdue)
+            </div>
+            <div style="margin: 10px 0;">
+                <strong>3. Chad Nelson (OSI Group):</strong> Send dairy brick repair quote for weekend work
+            </div>
+            <div style="margin: 10px 0;">
+                <strong>4. Curtis Palmer (Burke):</strong> Schedule Eduardo repairs and quality improvements
             </div>
         </div>
     </div>
     
-    <div class="footer">
-        <h2>🚀 Powered by OpenClaw Business Intelligence</h2>
-        <p>Real-time monitoring • Automated alerts • Business insights • GitHub-hosted applications</p>
-        <p style="margin-top: 15px; opacity: 0.7;">Last updated: March 5, 2026 • 12:13 PM EST</p>
+    <div class="last-updated">
+        🔄 Last updated: March 5, 2026 • 12:18 PM EST<br>
+        📊 Real data from food processing client base<br>
+        🏭 Specialized industrial flooring intelligence
     </div>
     
     <script>
-        // Auto-refresh every 10 minutes to get latest alerts
+        // Auto-refresh every 15 minutes
         setInterval(() => {
             window.location.reload();
-        }, 600000);
+        }, 900000);
         
-        // Add click tracking
-        document.querySelectorAll('.app-card').forEach(card => {
-            card.addEventListener('click', (e) => {
-                if (e.target.tagName !== 'BUTTON') {
-                    card.click();
-                }
+        // Add interactive hover effects
+        document.querySelectorAll('.client-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.boxShadow = '0 15px 35px rgba(168,230,161,0.3)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.boxShadow = 'none';
             });
         });
     </script>
